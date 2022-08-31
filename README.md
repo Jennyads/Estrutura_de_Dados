@@ -173,7 +173,7 @@ FIFO - First in, First out
 
 Qual a estrutura lógica do programa?
 
-<h3> FILAS </h5>
+<h3> Filas </h5>
 
 ```
 fila = origem 
@@ -220,7 +220,7 @@ Existem problemas muito difícies que se consegue resolver usando estrutura de d
 3) Com um vetor começando com -1 sinaliza-se que nunca esteve lá, assim é garantido que a distância é mínima. 
 
 
-<h5> Revisão de FILAS </h5>
+<h5> Revisão de Filas </h5>
 
 Viu-se que o problema de Distâncias Mínimas Rede 
 A Figura ajuda a entender o problema, porém o computador não consegue processar a figura.
@@ -240,7 +240,7 @@ Apesar de ser um código de 12 linhas e escrito em Python (que é mais simples),
 
 Em geral, é maus importante a arquitetura do que a linguagem para escalabilidade do seu sistema. 
 
-<h3> PILHA </h3>
+<h3> Pilha </h3>
 
 O último a ser colocado é o primeiro a ser tratado, como uma pilha de dados. 
 {()}  [()]
