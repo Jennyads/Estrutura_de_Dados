@@ -196,9 +196,10 @@ def Distancias(n, origem):
   f = []
   f.append(origem)
   while len(f) > 0:
-    x = f.pop(0)
-    for y in range(n):
+    x = f.pop(0) #remove o primeiro da fila
+    for y in range(n):  #percorre colunas
       if A[x][y] == 1 and d[y] == -1:
+      #tem vizinho e é a primeira vez
         d[y] = d[x] + 1
         f.append(y)
   return d
@@ -330,7 +331,9 @@ Exemplos:
 	Por isso, salva o seguinte, antes de atualizar o atual. Então são 3 ponteiros: atual, anterior e seguinte. 
 
 FILAS
+
 Problema de distâncias mínimas numa rede
+
 Usou-se 3 Estruturas de Dados:
 1) Precisou-se representar o desenho. Existem duas possibilidades: matriz ou dicionário. A matriz gasta um pouco mais de espaço, mas para perguntar se é vizinho, é muito mais rápido.
 2) Usa-se uma FILA para guardar as cidades onde está chegando, assim, na próxima iteração, pode-se avançar para novas cidades.
