@@ -21,6 +21,8 @@ type struct cel celula;
 Existem duas formas de se passar argumentos para uma função em C.
 1) Passagem por valor, somente uma cópia das variáveis.
 2) Passagem por referência, isto é ponteiros para as variáveis de origem. 
+
+
 Python também faz tudo por referência, mas ao alto nível C foi desenhada para construir um Sistema Operacional (Linux) por isso é tão "baixo" nível. 
 Portanto, é mais difícil programar em C (como dançar num salão bem encerado, com várias facas na mão). Os perigos maiores são devido aos ponteiros.
 Regras: assista Binky pointer fun
@@ -74,6 +76,7 @@ p = malloc(sizeuf(int));
 2) Não tem sentido ponteiro não inicializado.
 
 Com ponteiros se implementa "Caça ao Tesouro", isto é, Listas Ligadas ou Listas Encadeadas. Detalhes de implementação:
+
 A) Insere no começo, porque andar até o fim é ineficiente, logo, se quer 1 2 3, precisa inserir ao contrário 3 2 1.
 B) Uso cabeça de lista, porque assim se tem duas vantagens:
    B1) Não precisa testar lista vazia;
