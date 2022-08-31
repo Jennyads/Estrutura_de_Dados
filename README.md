@@ -255,28 +255,38 @@ Em geral acaba compensando gastar um pouco mais de espaço para ter maior veloci
 Exemplo: índice de banco de dados, cabeça de lista ligda, matriz para o problema de rede.
 
 Programas recursivos: funções que se chama a si próprias.
+
+```
 def fat(n):
   if n <= 1: return 1 #caso mais simples, sei a resposta
   return n * fat(n-1) #diminuindo o argumento da função
+```
 
 Está se fazendo repetições sem while e sem for. Como? no return, isto é usando DADOS.
 Nem sempre código recursivo é eficiente. 
+
+```
 def fib(n):
   if n<=2: return 1
   return fib(n-1) + fib(n-2)
+```
+
 Não é eficiente, porque repete coisa já feita. 
 Como melhorar? Usando DADOS!
 Duas formas?
 1) Usando um dicionário para guardar os valores passados.
 2) Usando lru_cache, isto é, a memória do Sistema Operacional para guardar os cálculos já feitos from functools import lru_cache
+
+```
 @lru_cache(maxsize = None)
 if n<=2: return 1
   return fib(n-1) + fib(n-2)
-
+```
 O código acima não repete chamada, pois se estiver na memória já pega. 
-Quando coloco o decorador @lru_cache, faz-se um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
+Quando coloca o decorador @lru_cache, faz-se um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
 
-Vetores em C
+<h5> Vetores em C </h5>
+
 Tem dados contíguos, isto é, um do lado do outro. Isto tem vantagens para grandes movimentações de dados. Porém, para inserir e remover elementos, principalmente no início, é muito ineficiente. Para resolver isso, usa-se Caça ao Tesouro, isto é, pistas que ligam um lugar a outro. No C, pistas são ponteiros.
 
 Em C usa ponteiro para: 
@@ -288,6 +298,8 @@ Regras para o uso de ponteiros:
 2) Não tem sentido usar um ponteiro que não inicializa.
 
 A Caça ao Tesuouro é feita assim:
+
+```
 struct cel {
   int conteudo;
   struct cel * seg; //ponteiro para o seguinte
@@ -299,6 +311,8 @@ x.conteudo = 42;
 celula *p;
 (*p). conteudo = 42; //é a mesma coisa
 p -> conteudo = 42; //Em C isto é o mesmo que (*p).conteudo
+
+```
 
 Na lista ligada ou Lista encadeada usa CABEÇA:
 1) Evito assim perguntar toda hora se a lista é vazia. 
