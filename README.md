@@ -58,11 +58,13 @@ nova -> seg = p->seg;   // igual
 Porque eu tenho um elemento sem nada no início?
 Por dois motivos:
 Chama-se de cabeça esse elemento. 
-1)Não preciso testar lista vazia toda hora no insere (eficiência), porque sempre tenho a cabeça, nunca está vazio.
+
+1) Não preciso testar lista vazia toda hora no insere (eficiência), porque sempre tenho a cabeça, nunca está vazio.
 2) Não preciso usar ponteiros para conteiros (clareza). Se não tiver cabeça preciso alterar lst que aponta para o início, só que lst é um ponteiro e se eu passar o endereço de um ponteiro, isso vira no insere ponteiro para ponteiro. 
 
 
 <h5> Ponteiros são muito usados em C </h5>
+
 1) Passagem de variável por referência;
 2) Vetor de alocação dinâmico.
 
@@ -76,11 +78,14 @@ p = malloc(sizeuf(int));
 2) Não tem sentido ponteiro não inicializado.
 
 Com ponteiros se implementa "Caça ao Tesouro", isto é, Listas Ligadas ou Listas Encadeadas. Detalhes de implementação:
-
+<br/>
 A) Insere no começo, porque andar até o fim é ineficiente, logo, se quer 1 2 3, precisa inserir ao contrário 3 2 1.
+<br/>
 B) Uso cabeça de lista, porque assim se tem duas vantagens:
-   B1) Não precisa testar lista vazia;
-   B2) Não usa ponteiros para ponteiros. 
+<br/>
+	B1) Não precisa testar lista vazia;
+   <br/>
+	B2) Não usa ponteiros para ponteiros. 
 
 * & aponta para ponteiro que já é ponteiro 
 * int * p = é usado na declaração para dizer que é ponteiro e no acesso para indiretamente mudar o enreço 
