@@ -365,7 +365,7 @@ Se no final de tudo sobrou menino, também deu ruim
 
 <h3> Busca Binária </h3>
 
-
+```
 def dec2bin(n):
     p = []
     while n != 0:
@@ -376,7 +376,7 @@ def dec2bin(n):
 
 dec2bin(18)
 
-
+```
 
 Se o número for sorteado entre 1 e 100 qual é o seu primeir chute?
 50
@@ -429,12 +429,12 @@ Por isso, busca binária é como a invenção da roda, reaproveita-se a ideia de
 O oposto também é rápido, se dobra o número de resultados bons a cada passo.
 
 
-Suponha que precise desenhar, numa folha de papel 128 retângulos
+Suponha que precise desenhar, numa folha de papel 128 retângulos.
 Existem duas formas básicas:
 1) Mede-se largura e comprimento, divida a folha em 128 retângulos, desenhando-se um por um.
 2) Pode-se dobrar a folha no meio, e depois dobrar novamente no meio e assim pr diante em 7 passos tem-se 128 retângulos.
 
-Se tem uma lista telefonica (áginas amarelas) e se deseja descobrir um telefone, abre-se no meio para ir mais rápido. Essa é a mesma ideia de busca binária!
+Se tem uma lista telefonica (páginas amarelas) e se deseja descobrir um telefone, abre-se no meio para ir mais rápido. Essa é a mesma ideia de busca binária!
 
 Viu-se busca binária num vetor ordenado, porém na vida real não encontra-se vetores ordenados, então é necessário ordenar o vetor antes de usar busca binária.
 Para ordenar existem vários algoritmos. Os que funcionam rápido usam IDEIA da busca binária, de dividir o mundo em dois.
