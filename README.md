@@ -363,7 +363,7 @@ Quando aparece menina vê o último na pilha, se for compátivel match
 Se no final de tudo sobrou menino, também deu ruim
 
 
-<h5> Busca Binária </h5>
+<h3> Busca Binária </h3>
 
 
 def dec2bin(n):
