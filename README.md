@@ -349,3 +349,106 @@ Usou-se 3 Estruturas de Dados:
 O código tem apenas doze linhas. Mas não é por ter poucas linhas que ele é fácil, ele tem 3 estruturas de dados, que são mais difícies de entender do que as linhas de código. 
 Na vida real, muitas vezes terá um sistema mais eficaz, se escolher a arquitetura bem. Isto é, modelar bem o banco de dados, escolher bem o tipo de banco de dados. 
 
+Pilhas 
+
+((){()})
+
+Abre parenteses menino fofo
+Abre chaves menino pontudo
+Fecha parenteses menina fofa
+Fecha chaves menina pontuda
+
+Todo menino vai para a pilha.
+Quando aparece menina vê o último na pilha, se for compátivel match
+Se no final de tudo sobrou menino, também deu ruim
+
+
+<h5> Busca Binária </h5>
+
+
+def dec2bin(n):
+    p = []
+    while n != 0:
+        p.append(n%2)
+        n =n//2
+    while len(p) > 0:
+        print(p.pop(), end = '')
+
+dec2bin(18)
+
+
+
+Se o número for sorteado entre 1 e 100 qual é o seu primeir chute?
+50
+Se chutar sempre metade da metade, em quantos passos se acerta o número?
+ 
+
+```
+
+from random import randint
+sorteado = randint(1,1000)
+while True:
+    x = int(input('chute: '))
+    if x == sorteado:
+        print('Ganhou: ')
+        break
+    elif x > sorteado:
+        print ('Alto')
+    else:
+        print('Baixo')
+#acerte dez chutes
+```
+
+Esse algoritmo é muito rápido, quanto maior, mais vale a pena usar.
+Para 1 milhão, gasta-se apenas 30 passos.
+
+```
+cont = 0
+def busca_binaria(x, v):
+  global cont
+  e = -1
+  d = len(v)
+  while e < d-1: 
+    m = (e + d) // 2
+    cont = cont + 1
+    if v[m] < x:
+      e = m
+    else:
+      d = m
+  return d
+
+
+v = list(range(1000000))
+from random import randint
+print (busca_binaria(randint(1, 1000000), v))
+print (cont)
+
+```
+
+Por isso, busca binária é como a invenção da roda, reaproveita-se a ideia de dividir o mundo em dois em vários outros contextos.
+O oposto também é rápido, se dobra o número de resultados bons a cada passo.
+
+
+Suponha que precise desenhar, numa folha de papel 128 retângulos
+Existem duas formas básicas:
+1) Mede-se largura e comprimento, divida a folha em 128 retângulos, desenhando-se um por um.
+2) Pode-se dobrar a folha no meio, e depois dobrar novamente no meio e assim pr diante em 7 passos tem-se 128 retângulos.
+
+Se tem uma lista telefonica (áginas amarelas) e se deseja descobrir um telefone, abre-se no meio para ir mais rápido. Essa é a mesma ideia de busca binária!
+
+Viu-se busca binária num vetor ordenado, porém na vida real não encontra-se vetores ordenados, então é necessário ordenar o vetor antes de usar busca binária.
+Para ordenar existem vários algoritmos. Os que funcionam rápido usam IDEIA da busca binária, de dividir o mundo em dois.
+
+5 algoritmos de ordenação: 
+2 ruins: selação e inserção
+3 bons: mergesort, quicksort e heapsort
+
+
+
+
+
+
+
+
+
+
