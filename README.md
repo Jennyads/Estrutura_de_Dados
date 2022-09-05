@@ -338,7 +338,7 @@ Exemplos:
 	Quando se está em uma posição, precisa-se saber o anterior, porque não tem campo de anterior, só seguinte. Na hora em que atualizar o ponteiro atual, para apontar para o anterior, se perde o seguinte!
 	Por isso, salva o seguinte, antes de atualizar o atual. Então são 3 ponteiros: atual, anterior e seguinte. 
 
-FILAS
+<h5> Revisão Filas </h5>
 
 Problema de distâncias mínimas numa rede
 
@@ -349,10 +349,12 @@ Usou-se 3 Estruturas de Dados:
 O código tem apenas doze linhas. Mas não é por ter poucas linhas que ele é fácil, ele tem 3 estruturas de dados, que são mais difícies de entender do que as linhas de código. 
 Na vida real, muitas vezes terá um sistema mais eficaz, se escolher a arquitetura bem. Isto é, modelar bem o banco de dados, escolher bem o tipo de banco de dados. 
 
-Pilhas 
+
+<h5> Revisão Pilhas </h5>
 
 ((){()})
 
+```
 Abre parenteses menino fofo
 Abre chaves menino pontudo
 Fecha parenteses menina fofa
@@ -361,6 +363,7 @@ Fecha chaves menina pontuda
 Todo menino vai para a pilha.
 Quando aparece menina vê o último na pilha, se for compátivel match
 Se no final de tudo sobrou menino, também deu ruim
+```
 
 
 <h3> Busca Binária </h3>
