@@ -382,7 +382,9 @@ dec2bin(18)
 ```
 
 Se o número for sorteado entre 1 e 100 qual é o seu primeir chute?
+
 50
+
 Se chutar sempre metade da metade, em quantos passos se acerta o número?
  
 
@@ -442,9 +444,9 @@ Se tem uma lista telefonica (páginas amarelas) e se deseja descobrir um telefon
 Viu-se busca binária num vetor ordenado, porém na vida real não encontra-se vetores ordenados, então é necessário ordenar o vetor antes de usar busca binária.
 Para ordenar existem vários algoritmos. Os que funcionam rápido usam IDEIA da busca binária, de dividir o mundo em dois.
 
-5 algoritmos de ordenação: 
-2 ruins: selação e inserção
-3 bons: mergesort, quicksort e heapsort
+<p> 5 algoritmos de ordenação: </p>
+<p> - 2 ruins: selação e inserção </p>
+<p> - 3 bons: mergesort, quicksort e heapsort </p>
 
 
 
