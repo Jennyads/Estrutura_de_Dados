@@ -686,7 +686,9 @@ Pode usar a ideia de dividir o mundo eem dois andando pelos índices do vetor.
 Assim, vai dobrando o índice a cada passo para andar para a direita e vai dividindo o índice pela metade a cada passo para andar no final para o começo. 
 Essa estrutura é chamada heap.
 
-* heapsort.py que usa estrutura do python
+* heapsort.py 
+
+Usa estrutura do python!
 
 ```
 from heapq import heappush, heappop
