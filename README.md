@@ -472,10 +472,11 @@ Busca binária é como a invenção da roda, usa-se a ideia em outros contextos:
 Porém para usar busca binária é preciso ter um vetor ordenado, será que custa muito ordenar um vetor? Porque se demorar não vale a pena uscar busca binária.
 
 <p> 5 algoritmos de ordenação: </p>
-<p> - 2 ruins: selação e inserção </p>
+<p> - 2 ruins: seleção e inserção </p>
 <p> - 3 bons: mergesort, quicksort e heapsort </p>
 
 * Inserção (algoritmo do baralho)
+
 Quando se recebe as cartas de um baralho, percorre-se da esquerda para a direita e enfia cada carta no lado esquedo na posição ordenada.
 
 ```
@@ -507,7 +508,8 @@ Percorrer todos da esquerda para direita custa n passos.
 Para cada elemento, o pior caso é onde é necessário empurar todo mundo para a direita, isto é, números muito pequenos.
 Então no pior caso custa n * n passos n ** 2. Note que o pior caso não ocorre sempre, então na média , inserção será melhor que n ** 2, principalmente quando se têm números grandes. Inserção, portanto, não serve para esse caso!
 
-Inserção.py
+* Inserção.py
+
 Se tiver que esperar mais de 20 segundos para ordenar apenas 20k elementos, não vale a pena usar busca binária. 
 
 ```
@@ -536,6 +538,7 @@ print (t2-t1)
 ```
 
 - Outra ideia:
+
  Percorrer da esquerda para direita e para cada elementos, verificar o menor que está adiante.
  Então, troca-se a posição atual com o menor que se encontrou pela frente.
  Seleção, porque seleciona e troca.
@@ -555,6 +558,7 @@ print (t2-t1)
  ```
  
  Quanto custa seleção?
+ 
  Precisa percorrer todos: custa n passos.
  Para cada, precisa verificar o menor: custa n passos.
  Logo, no total custa n*n = n ** 2 passos
@@ -562,6 +566,7 @@ print (t2-t1)
  Para calcular o menor, tem-se uma função min do Python que é otimizada.
  
  * Seleção.py
+ 
  Para 20k demorou mais de 5 segundos, ainda é muito ruim, mesmo usando uma função embutida do python.
  
  ```
@@ -638,6 +643,7 @@ print (t2-t1)
 Agora sim, demorou apenas 0,1 segundos!
 
 - Melhorar mais ainda:
+
 Quicksort usa sempre um pivô (voluntário).
 Divide-se em duas partes, menores que o pivô e maiores que o pivô.
 Assim, tem-se o pivô na posição correta. Repete-se o processo para cada metade.
@@ -675,6 +681,7 @@ print (t2-t1)
 Já está ótimo em 0.5
 
 - Dá para melhorar mais ainda?
+
 Pode usar a ideia de dividir o mundo eem dois andando pelos índices do vetor.
 Assim, vai dobrando o índice a cada passo para andar para a direita e vai dividindo o índice pela metade a cada passo para andar no final para o começo. 
 Essa estrutura é chamada heap.
