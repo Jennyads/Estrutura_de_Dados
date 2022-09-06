@@ -535,7 +535,7 @@ print (t2-t1)
 ##print (v)
 ```
 
-* Outra ideia:
+- Outra ideia:
  Percorrer da esquerda para direita e para cada elementos, verificar o menor que está adiante.
  Então, troca-se a posição atual com o menor que se encontrou pela frente.
  Seleção, porque seleciona e troca.
@@ -552,11 +552,12 @@ print (t2-t1)
  0 1 2 3 4 6 5 7             troca 4 4 
  0 1 2 3 4 5 6 7             troca 5 6 
  0 1 2 3 4 5 6 7             troca 6 6 
+ ```
  
  Quanto custa seleção?
  Precisa percorrer todos: custa n passos.
  Para cada, precisa verificar o menor: custa n passos.
- Logo, no total custa n*n = n**2 passos
+ Logo, no total custa n*n = n ** 2 passos
  Será que pode melhorar isso: Sim
  Para calcular o menor, tem-se uma função min do Python que é otimizada.
  
@@ -583,14 +584,11 @@ print (t2-t1)
 ```
  
 
-
-
-
-Repare que seleção, se nçao usar função embutida, é pior que inserção, porque inserção tem casos ruins e casos bons, no caso da seleção *sempre* precisa ir até o fim para descobrir o menor.
+Repare que seleção, se não usar função embutida, é pior que inserção, porque inserção tem casos ruins e casos bons, no caso da seleção *sempre* precisa ir até o fim para descobrir o menor.
 Na média, inserção é melhor que seleção. O únicp caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
 Nesse caso só é pior, porque está utilizando uma função do python, min que é otimizada para pegar os menores.
 
-* Melhotrando isso com a ideia de dividir o mundo em dois:
+Melhorando isso com a ideia de dividir o mundo em dois:
 
 ```
 4 3 6 0         1 2 5 7        2 quadruplas
@@ -603,6 +601,7 @@ Nesse caso só é pior, porque está utilizando uma função do python, min que 
 ```
 
 * Mergesort.py
+
 ```
 def mergesort(v):
     if len(v) <= 1: return v
@@ -634,6 +633,93 @@ t1 = time()
 v = mergesort(v)
 t2 = time()
 print (t2-t1)
+
+```
+Agora sim, demorou apenas 0,1 segundos!
+
+- Melhorar mais ainda:
+Quicksort usa sempre um pivô (voluntário).
+Divide-se em duas partes, menores que o pivô e maiores que o pivô.
+Assim, tem-se o pivô na posição correta. Repete-se o processo para cada metade.
+Assim, vai dobrando a cada passo o número de pessoas na posição correta.
+
+* Quicksort.py
+
+```
+##from memory_profiler import profile
+##@profile
+def quicksort(v):
+  if len(v) <= 1: return v    
+  pivô = v[0]
+  iguais  = [x for x in v if x == pivô]
+  menores = [x for x in v if x <  pivô]
+  maiores = [x for x in v if x >  pivô]
+  return quicksort(menores) + iguais + quicksort(maiores)
+
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+quicksort(v)
+t2 = time()
+print (t2-t1)
+##from random import sample
+##v = sample(range(10), 10)
+##print (v)
+##v = quicksort(v)
+##print (v)
+
+
+```
+Já está ótimo em 0.5
+
+- Dá para melhorar mais ainda?
+Pode usar a ideia de dividir o mundo eem dois andando pelos índices do vetor.
+Assim, vai dobrando o índice a cada passo para andar para a direita e vai dividindo o índice pela metade a cada passo para andar no final para o começo. 
+Essa estrutura é chamada heap.
+
+* heapsort.py que usa estrutura do python
+
+```
+from heapq import heappush, heappop
+def heapsort(v):
+  h = []
+  for x in v: heappush(h, x)
+  return [heappop(h) for i in range(len(h))]
+
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+heapsort(v)
+t2 = time()
+print (t2-t1)
+##from random import sample
+##v = sample(range(10), 10)
+##print (v)
+##v = heapsort(v)
+##print (v)
+
 ```
 
-Agora sim, demorou apenas 0,1 segundos!
+* Sort interno.py
+
+É uma mistura de mergersort com outros esteróides de otimização.
+TIMSORT é o nome do algoritmo. O sort interno da linguagem java é o mesmo TIMSORT que foi inventado no python.
+
+```
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+v.sort()
+t2 = time()
+print (t2-t1)
+
+```
+
+Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
+1 + 2 + 4 + 16 + 32 + ...
