@@ -446,13 +446,13 @@ Para ordenar existem vários algoritmos. Os que funcionam rápido usam IDEIA da 
 
 <h5> Revisão Busca Binária </h5> 
 
-* Dividir o mundo em dois, então a cada passo tenho metade das buscas.
-* Vetor ordenado
-* Busca binária é muito rápido
+* Dividir o mundo em dois, então a cada passo tenho metade das buscas;
+* Vetor ordenado;
+* Busca binária é muito rápido;
 
-Custa log(n,2) passos onde n é o tamanho do vetor 
+Custa log(n,2) passos onde n é o tamanho do vetor.
 
-Nota que quanto maior é o n, mais vale a pena usar busca binária
+Nota que quanto maior é o n, mais vale a pena usar busca binária!
 
 ```
 n = 1k          log(n,2) = 10
@@ -461,12 +461,12 @@ n = 1Tri        log(n,2) = 30
 n = 1Qua        log(n,2) = 40
 ```
 
-Enquanto aumento o n exponencialmente, o número de passos aumenta linearmente.
+Enquanto é aumentado o n exponencialmente, o número de passos aumenta linearmente.
 Busca binária é como a invenção da roda, usa-se a ideia em outros contextos:
 
 1) Se procura um nome na Lista Telefônica (páginas amarelas), abre-se a lista no meio.
 2) Se quer desenhar 128 retângulos numa folha, é mais fácil ir dobrando a folha sucessivamente ao meio.
-3) Para fazer o índice do banco de dados
+3) Para fazer o índice do banco de dados.
 
 
 Porém para usar busca binária é preciso ter um vetor ordenado, será que custa muito ordenar um vetor? Porque se demorar não vale a pena uscar busca binária.
@@ -502,4 +502,138 @@ Exemplo:
 0 1 2 3 4 5 6 7         7 está ok
 ```
 
+Quantos passos custa inserção?
+Percorrer todos da esquerda para direita custa n passos.
+Para cada elemento, o pior caso é onde é necessário empurar todo mundo para a direita, isto é, números muito pequenos.
+Então no pior caso custa n * n passos n ** 2. Note que o pior caso não ocorre sempre, então na média , inserção será melhor que n ** 2, principalmente quando se têm números grandes. Inserção, portanto, não serve para esse caso!
 
+Inserção.py
+Se tiver que esperar mais de 20 segundos para ordenar apenas 20k elementos, não vale a pena usar busca binária. 
+
+```
+def inserção(v):
+  for j in range(1, len(v)):
+    x = v[j]
+    i = j - 1
+    while i >= 0 and x < v[i]:
+      v[i+1] = v[i]
+      i = i - 1
+    v[i + 1] = x
+  return v
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+inserção(v)
+t2 = time()
+print (t2-t1)
+##from random import sample
+##v = sample(range(10), 10)
+##print (v)
+##v = inserção(v)
+##print (v)
+```
+
+* Outra ideia:
+ Percorrer da esquerda para direita e para cada elementos, verificar o menor que está adiante.
+ Então, troca-se a posição atual com o menor que se encontrou pela frente.
+ Seleção, porque seleciona e troca.
+ 
+ ```
+ 4 3 6 0 1 2 5 7
+ 0 3 6 4 1 2 5 7             troca 0 4
+ 0 1 6 4 3 2 5 7             troca 1 3
+ 0 1 2 4 3 6 5 7             troca 2 6 
+ 0 1 2 3 4 6 5 7             troca 3 4 
+ 
+ Note que sempre precisa ir até o final para ter certeza que achou o menor, como ser humano é possível ver tudo de uma vez, o programa não, por isso sempre anda até o fim.
+ 
+ 0 1 2 3 4 6 5 7             troca 4 4 
+ 0 1 2 3 4 5 6 7             troca 5 6 
+ 0 1 2 3 4 5 6 7             troca 6 6 
+ 
+ Quanto custa seleção?
+ Precisa percorrer todos: custa n passos.
+ Para cada, precisa verificar o menor: custa n passos.
+ Logo, no total custa n*n = n**2 passos
+ Será que pode melhorar isso: Sim
+ Para calcular o menor, tem-se uma função min do Python que é otimizada.
+ 
+ * Seleção.py
+ Para 20k demorou mais de 5 segundos, ainda é muito ruim, mesmo usando uma função embutida do python.
+ 
+ ```
+ def seleção(v):
+  r = []
+  while v:
+    m = min(v) 
+    r.append(m)
+    v.remove(m)
+  return r
+
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+seleção(v)
+t2 = time()
+print (t2-t1)
+```
+ 
+
+
+
+
+Repare que seleção, se nçao usar função embutida, é pior que inserção, porque inserção tem casos ruins e casos bons, no caso da seleção *sempre* precisa ir até o fim para descobrir o menor.
+Na média, inserção é melhor que seleção. O únicp caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
+Nesse caso só é pior, porque está utilizando uma função do python, min que é otimizada para pegar os menores.
+
+* Melhotrando isso com a ideia de dividir o mundo em dois:
+
+```
+4 3 6 0         1 2 5 7        2 quadruplas
+4 3    6 0    1 2    57        4 duplas
+4  3  6  0  1  2  5  7         8 unidades
+34    06    12    57           4 duplas ordenadas
+0346              1257         2 quadruplas ordenadas
+01234567                       Tudo ordenado
+
+```
+
+* Mergesort.py
+```
+def mergesort(v):
+    if len(v) <= 1: return v
+    else:
+        m = len(v) // 2
+        e = mergesort(v[:m])
+        d = mergesort(v[m:])
+        return merge(e, d)
+
+def merge(e, d):
+    r = []
+    i, j = 0, 0
+    while i < len(e) and j < len(d):
+        if e[i] <= d[j]:
+            r.append(e[i])
+            i += 1
+        else:
+            r.append(d[j])
+            j += 1
+    r += e[i:]
+    r += d[j:]
+    return r
+
+from time import time
+from random import shuffle
+v = list(range(20000))
+shuffle(v)
+t1 = time()
+v = mergesort(v)
+t2 = time()
+print (t2-t1)
+```
+
+Agora sim, demorou apenas 0,1 segundos!
