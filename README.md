@@ -444,16 +444,62 @@ Se tem uma lista telefonica (páginas amarelas) e se deseja descobrir um telefon
 Viu-se busca binária num vetor ordenado, porém na vida real não encontra-se vetores ordenados, então é necessário ordenar o vetor antes de usar busca binária.
 Para ordenar existem vários algoritmos. Os que funcionam rápido usam IDEIA da busca binária, de dividir o mundo em dois.
 
+<h5> Revisão Busca Binária </h5> 
+
+* Dividir o mundo em dois, então a cada passo tenho metade das buscas.
+* Vetor ordenado
+* Busca binária é muito rápido
+
+Custa log(n,2) passos onde n é o tamanho do vetor 
+
+Nota que quanto maior é o n, mais vale a pena usar busca binária
+
+```
+n = 1k          log(n,2) = 10
+n = 1M          log(n,2) = 20
+n = 1Tri        log(n,2) = 30
+n = 1Qua        log(n,2) = 40
+```
+
+Enquanto aumento o n exponencialmente, o número de passos aumenta linearmente.
+Busca binária é como a invenção da roda, usa-se a ideia em outros contextos:
+
+1) Se procura um nome na Lista Telefônica (páginas amarelas), abre-se a lista no meio.
+2) Se quer desenhar 128 retângulos numa folha, é mais fácil ir dobrando a folha sucessivamente ao meio.
+3) Para fazer o índice do banco de dados
+
+
+Porém para usar busca binária é preciso ter um vetor ordenado, será que custa muito ordenar um vetor? Porque se demorar não vale a pena uscar busca binária.
+
 <p> 5 algoritmos de ordenação: </p>
 <p> - 2 ruins: selação e inserção </p>
 <p> - 3 bons: mergesort, quicksort e heapsort </p>
 
+* Inserção (algoritmo do baralho)
+Quando se recebe as cartas de um baralho, percorre-se da esquerda para a direita e enfia cada carta no lado esquedo na posição ordenada.
 
+```
+2 3 1 5 4 0 7 6
+1 2 3                       1 empurra 23 
+1 2 3 5                     5 está ok
+1 2 3 4 5                   4 empurra 5
+0 1 2 3 4 5                 0 empurra 12345
+0 1 2 3 4 5 7               7 está ok
+0 1 2 3 4 5 6 7             6 empurra 7
+```
 
+Exemplo:
 
+```
+4 3 6 0 1 2 5 7
 
-
-
-
+3 4                     3 empurra 4
+3 4 6                   6 está ok
+0 3 4 6                 0 empurra 346
+0 1 3 4 6               1 empurra 346
+0 1 2 3 4 6             2 empurra 346
+0 1 2 3 4 5 6           5 empurra 6
+0 1 2 3 4 5 6 7         7 está ok
+```
 
 
