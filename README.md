@@ -732,3 +732,21 @@ print (t2-t1)
 
 Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 1 + 2 + 4 + 16 + 32 + ...
+
+
+<h4> Revisão </h4>
+Algoritmos de Ordenação
+
+É bom ver várias formas de fazer um mesmo código.
+5 formas diferentes!
+2 ruins: inserção e seleção custam n*n ou n ** 2 passos, inserção no pior caso é n  *n, porém tem casos bons (números grandes não mexem os anteriores), então na média inserção é melhor que seleção, seleção é sempre ruim, só tem caso pior. Melhora-se usando min, função embutida no python, que usa uma estrutura de dados auxiliar para guardar o menor, sem ter que passar por todos os elementos. 
+3 boas: mergesort (divide o vetor em dois), quicksort (divide os elementos em maiores ou menores que um pivô), heapsort (anda muito rápido em passos que vão dobrando no índice).
+Mergesort: divide o vetor em dois até ficar do tamanho 1, então junta-se (merge) os vetores até voltar ao original juntant0 = se tem duas fileiras de crianças em ordem, pode-se ir escolhendo a menor entre as duas da ponta de cada fileira. Gasta-se n passos nesse "juntando" porque todo mundo tem que ser comparado e gasta também um espaço igual ao vetor original. Licão: não basta ter um número de passos pequenos, precisa-se gastar pouca memória também, mergesort gasta bastante memória.
+Desvantagens: mergesort, apesar de rápido, gasta mais espaço.
+Vantagens: as partes do vetor divididas são independentes e pode ser resolvido de forma assíncrona. 
+
+Quicksort: divide em maiores ou menores que um pivô e repete sucessivamente até todos estarem na posição final. O interessante do quicksort é que o número de pessoas na posição final cresce muito mais rápido que mergesort. Quicksort é acumulativo, não só dobra. mas acumula os anteriores.
+Total: 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128 + 256 + 512 + 1024
+Análise detalhada: Qual é o pir caso? Vetor já ordernado, sempre não vai ninguém para um dos lados, o que resulta que não dobra o número a cada passo, e pior, vai demorar n passos até todo mundo ficar na posição.
+Então no total vai gastar n * n, tão ruim quanto inserção e seleção na prática nunca encontra um vetor ordenado. Então na média quicksort é muito bom!
+
