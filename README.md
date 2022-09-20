@@ -738,15 +738,95 @@ Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 Algoritmos de Ordenação
 
 É bom ver várias formas de fazer um mesmo código.
+
 5 formas diferentes!
-2 ruins: inserção e seleção custam n*n ou n ** 2 passos, inserção no pior caso é n  *n, porém tem casos bons (números grandes não mexem os anteriores), então na média inserção é melhor que seleção, seleção é sempre ruim, só tem caso pior. Melhora-se usando min, função embutida no python, que usa uma estrutura de dados auxiliar para guardar o menor, sem ter que passar por todos os elementos. 
+
+2 ruins: inserção e seleção custam n*n ou n ** 2 passos, inserção no pior caso é n * n, porém tem casos bons (números grandes não mexem os anteriores), então na média inserção é melhor que seleção, seleção é sempre ruim, só tem caso pior. Melhora-se usando min, função embutida no python, que usa uma estrutura de dados auxiliar para guardar o menor, sem ter que passar por todos os elementos. 
 3 boas: mergesort (divide o vetor em dois), quicksort (divide os elementos em maiores ou menores que um pivô), heapsort (anda muito rápido em passos que vão dobrando no índice).
 Mergesort: divide o vetor em dois até ficar do tamanho 1, então junta-se (merge) os vetores até voltar ao original juntant0 = se tem duas fileiras de crianças em ordem, pode-se ir escolhendo a menor entre as duas da ponta de cada fileira. Gasta-se n passos nesse "juntando" porque todo mundo tem que ser comparado e gasta também um espaço igual ao vetor original. Licão: não basta ter um número de passos pequenos, precisa-se gastar pouca memória também, mergesort gasta bastante memória.
 Desvantagens: mergesort, apesar de rápido, gasta mais espaço.
 Vantagens: as partes do vetor divididas são independentes e pode ser resolvido de forma assíncrona. 
 
 Quicksort: divide em maiores ou menores que um pivô e repete sucessivamente até todos estarem na posição final. O interessante do quicksort é que o número de pessoas na posição final cresce muito mais rápido que mergesort. Quicksort é acumulativo, não só dobra. mas acumula os anteriores.
+
 Total: 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128 + 256 + 512 + 1024
+
 Análise detalhada: Qual é o pir caso? Vetor já ordernado, sempre não vai ninguém para um dos lados, o que resulta que não dobra o número a cada passo, e pior, vai demorar n passos até todo mundo ficar na posição.
 Então no total vai gastar n * n, tão ruim quanto inserção e seleção na prática nunca encontra um vetor ordenado. Então na média quicksort é muito bom!
 
+Revisão Geral:
+
+* Funções recursivas (são aquelas que chamam a si próprias). 
+Faz repetições sem for e sem while, usando o retorno do dado para fazer a composição final do que quer:
+```
+def função_recursiva(argumentos):
+   if caso mais simples: 
+  	retorno valor que sei de antemão
+   retorno uma composição diminuindo algum dos argumentos
+```
+```
+def fib(n): 
+  if n == 1: return 1
+  return n * fat(n-1)
+  
+def fib (n):
+  if n == 1 or n == 2: return 1
+  return fib(n-1) + fib(n-2)
+```
+
+Fibonacci recursivo acima não é eficiente, porque repete contas já feitas. 
+Como resolve essa ineficiência? (repetir cálculos já feitos).
+Usando estruturas de dados para guardar os cálculos e não repetir mais.
+
+
+#Forma1: usando dicionários para guardar o que já fez
+
+```
+dic = {}
+def fib(n): 
+  if n == 1 or n == 2: return 1
+  if n not in dic: dic[n] = fib(n-1) + fib(n-2)
+  return dic[n]
+```
+
+#Forma2: usando o cache do Sistema Operacional
+
+```
+from functools import lru_cache
+def fib(n):
+  if n == 1 or n == 2: return 1
+  return fib(n-1) + fib(n-2)
+ ```
+ 
+ Nesse exemplo, usa a memória do sistema operacional para guardar os cálculos já feitos.
+ O decorador @lru_cache faz um envelope da função, dando super poderes para a função debaixo.
+ 
+ 
+ 
+ Ponteirs e Listas Ligadas(Encadeadas)
+ Vetores em C tem dados contíguos (um do ladinho do outro). C é uma linguagem de baixo nível (feita para construção de um sistema operacional - Linux). Em C é muito rápido mover grandes áreas de dados, porém para inserir ou remover num vetor, em C, é muito ineficiente, principalmente no início do vetor, porque precisa mover todo mundo para direita ou esquerda, para inserção, remoção. Em C resolve esse problema numa estrutura de dados, chamada lista ligada (caça ao tesouro). Na caça ao tesouro, os locais estão em posições diferentes, o que une um local ao outro são as pistas. 
+As pistas em C são chamadas de ponteiros.
+
+Ponteiros em C são usados em muitas coisas: 
+1) Passagem de parâmetros por referência, em muitas vezes, preciso alterar uma variável local, em outro escopo, só consegue fazer isso passando o endereço da variável local. 
+2) 2) Faz alocação dinâmica de vetor, para definir o tamanho do vetor em tempo de execução.
+
+
+Ponteiros tem regras de uso:
+1) Ponteiro e coisa apontada são diferentes.
+2) Não tem sentido usar ponteiro que não foi inicializado.
+
+Agora pode resolver o problema dos vetores, usando a estrutura abaixo: 
+```
+struct cel {
+  int conteudo;
+  struct cel *seg;  // pista para o seguinte
+}
+```
+
+Listas encadeada tem muitos detalhes: 
+1) Insere no começo, porque é ineficiente andar até o fim para inserir, por isso se quero uma lista 1 2 3 precisa inserir 3 2 1.
+2) Usa cabeça de lista, para duas coisas: // cabeça é um elemento sem conteúdo
+   2.1) Não precisa mais testar lista vazia no insere.
+   2.2.) Não usa ponteiros para ponteiros, lst é o ínicio da lista, se começa sem cabeça, lst começa com NULL e vai precisar alterar dentro de insere, ora, lst deverá ser passado por endereço, mas o endereço de uma coisa que já ponteiro, virá ponteiro para ponteiro, o que é muiyo difícil de entender e dar manutenção. 
+ 
