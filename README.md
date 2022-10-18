@@ -1,3 +1,116 @@
+<h3> Recursão </h3>
+
+Recursão = função que chama a si própria no código.
+
+```
+Fatorial
+fat(0) ou fat(1) = 1     0! ou 1! = 1
+n! = n*(n-1)!
+4! = 4.3! = 4x3x2! = 4x3x2x1! = 4x3x2x1 = 24
+```
+```
+def fat(n):
+    if n == 0 or n==1: return 1
+    else:
+        return n*fat(n-1)
+
+print(fat(4))
+```
+
+A maior parte das funções recursivas são da seguinte forma:
+
+```
+def f(argumentos):
+	se caso simples:
+		devolve valor que sei
+	senão:
+		faz alguma conta que diminui os argumentos
+		devolve valor composto que monta o resultado que quero
+```
+
+Repare que no fatorial recursivo não tem while e não tem for.
+Então como ele faz a repetição?
+Ele faz a repetição no *return*
+
+```
+fat(4):
+	if 4 == 0 or 4 == 1:
+	else:
+		return 4 * fat(3)
+fat(3):
+	if 3 == 0 or 3 == 1:
+	else:
+		return 3 * fat(2)
+fat(2):
+	if 2 == 0 or 2 == 1:
+	else:
+		return 2 * fat(1)
+fat(1):
+	if 1 == 0 or 1 == 1: return 1
+```
+
+* Exemplo - Potência:
+
+```
+def pot(x,n):
+    if n == 0: return 1
+    return x * pot(x, n-1)
+
+print(pot(2,3))
+```
+
+* Exemplo - Fatiamento:
+
+```
+def inv(s):
+    if len(s) == 0: return ""
+    return inv(s[1:]) + s[0]
+print(inv("abacate"))
+```
+
+* Exemplo - mdc:
+
+```
+def mdc(a,b):
+    if a % b == 0: return b
+    return mdc(b, a%b)
+print(mdc(21,15))
+print(mdc(15,21))
+```
+
+* Exemplo soma dos dígitos de um inteiro n
+
+```
+def sd(n): 
+    #sd(123) = 6 = 1 + 2 + 3
+    if n <= 9: return n
+    return sd(123 // 10) + n % 10
+print(sd(123))
+```
+
+* Exemplo - Fibonacci:
+
+```
+def fib(n):
+    if n <= 2: return 1
+    return fib(n-1) + fib(n-2)
+print(fib(10))
+```
+
+Funções recursivas são poderosas porque "concentram" mais programação em menos linhas. Será que são sempre eicientes?
+Não! Depende de como é programado.
+
+Para números muito grandes:
+
+```
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fib(n):
+    if n <= 2: return 1
+    return fib(n-1) + fib(n-2)
+print(fib(100))
+```
 
 <h3> Ponteiros </h3>
 
