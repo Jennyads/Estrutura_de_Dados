@@ -111,6 +111,50 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 print(fib(100))
 ```
+Observação: nem toda função recursiva é eficiente, depende de como é implementada!
+
+Fibonacci: #essa forma não é eficiente porque repete!!!!
+```
+def fib(n):
+    if n <= 2: return 1
+    return fib(n-1) + fib(n-2)
+print(fib(10))
+```
+
+Usando dicionário para armazenar os valores:
+
+```
+dic = {}
+def fib(n):
+    if n<=2: return 1
+    if n not in dic: dic[n] = fib(n-1) + fib(n-2)
+    return dic[n]
+print(fib(100))
+```
+
+Obs.: Embora armazenar dados exija mais espaço, evita repetição.
+
+
+Usando dicionário, guarda-se as respostas já calculadas. Assim não se repete mais e o programa fica muito mais rápido.
+Porém usando o dicionário meu código fica mais feio. 
+
+Dicionário = estrutura chave-valor
+
+O jeito de deixar de repetir sem mudar o código é usar bibliotecas.
+
+Com isso, usa a memória do sistema operacional (cache) para guardar os retornos já calculados. Assim, usa-se um decorador do Python,
+chamado lru_cache, lru = less results utilized.
+O decorador faz um envelope da função Fibonacci e dá super poderes sem mudar o código:
+
+```
+from functools import lru_cache
+@lru_cache(maxsize=None)
+def fib(n):
+    print(n)
+    if n<=2: return 1
+    return fib(n-1) + fib(n-2)
+print(fib(100))
+```
 
 <h3> Ponteiros </h3>
 
