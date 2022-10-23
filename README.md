@@ -270,7 +270,7 @@ for k in range (10000000000000000000000000000):
 3) Algoritmos probabilísticos 
 
 Vamos ver exemplos de resolução de exercícios onde esses detalhes todos em C são importantes:
-
+```
 1) Lista Ligada Vetor para Lista.c (exercício 9)
    Percorro o vetor ao contrário, porque insiro no início da lista
 
@@ -284,6 +284,7 @@ Vamos ver exemplos de resolução de exercícios onde esses detalhes todos em C 
    Antes de devolver para a memória preciso salvar o seguinte, senão não sei mais para onde devo ir. 
 
 4) Inversão e Josephus não cai na prova (exercício 19 e 20).
+````
 
 ```
 Python Referencia 
