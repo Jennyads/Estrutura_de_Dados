@@ -320,9 +320,9 @@ dic [2] = [4]
 
 As duas possibilidades tem vantagens e desvantagens. 
 Matriz ocupa muito mais espaço, além de ter muitas posições com zero, isto é, inúteis, porém é muito mais rápido perguntar se uma cidade é vizinha da outra.
-No dicionário, se uma cidade tiver muitos vizinhos, vou ter que andar até o final até descobrir se é vizinho ou não, matriz é imediata a resposta.
+No dicionário, se uma cidade tiver muitos vizinhos, vai ter que andar até o final até descobrir se é vizinho ou não, matriz é imediata a resposta.
 
-Vamos utilizar matriz, já que o número de cidades não é tão grande e posso até otimizar e guardar o conteúdo em um bit, ja que é zero ou um. 
+Vamos utilizar matriz, já que o número de cidades não é tão grande e é possível otimizar e guardar o conteúdo em um bit, ja que é zero ou um. 
 
 Para andar pelas cidades precisa-se guardar as seguintes, para a partir delas ir para frente.
 
