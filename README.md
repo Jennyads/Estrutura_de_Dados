@@ -22,13 +22,13 @@ A maior parte das funções recursivas são da seguinte forma:
 ```
 def f(argumentos):
 	se caso simples:
-		devolve valor que sei
+		devolve valor que se sabe
 	senão:
 		faz alguma conta que diminui os argumentos
-		devolve valor composto que monta o resultado que quero
+		devolve valor composto que monta o resultado que se quer
 ```
 
-Repare que no fatorial recursivo não tem while e não tem for.
+No fatorial recursivo não tem while e não tem for.
 Então como ele faz a repetição?
 Ele faz a repetição no *return*
 
@@ -97,7 +97,7 @@ def fib(n):
 print(fib(10))
 ```
 
-Funções recursivas são poderosas porque "concentram" mais programação em menos linhas. Será que são sempre eicientes?
+Funções recursivas são poderosas porque "concentram" mais programação em menos linhas. Será que são sempre eficientes?
 Não! Depende de como é programado.
 
 Para números muito grandes:
@@ -138,7 +138,7 @@ Obs.: Embora armazenar dados exija mais espaço, evita repetição.
 Usando dicionário, guarda-se as respostas já calculadas. Assim não se repete mais e o programa fica muito mais rápido.
 Porém usando o dicionário meu código fica mais feio. 
 
-Dicionário = estrutura chave-valor
+Dicionário = estrutura chave-valor.
 
 O jeito de deixar de repetir sem mudar o código é usar bibliotecas.
 
@@ -160,9 +160,9 @@ print(fib(100))
 
 Vetores em C usam dados contíguos, um dado do ladinho do outro.
 Vantagem é movimentar rápido grandes massas de dados.
-Desvantagem é inserir ou remover, pois tenho que mover todos os elementos da direita. 
+Desvantagem é inserir ou remover, pois tem que mover todos os elementos da direita. 
 Como resolve essa ineficiência?
-Usando ponteiros, assim eu tenho dados que não são contíguos e para inserir ou remover basta mudar ponteiros. 
+Usando ponteiros, assim há dados que não são contíguos e para inserir ou remover basta mudar ponteiros. 
 Isso lembra Caça ao Tesouro.
 Como implementar isso?
 
@@ -182,7 +182,7 @@ Existem duas formas de se passar argumentos para uma função em C.
 
 Python também faz tudo por referência, mas ao alto nível C foi desenhada para construir um Sistema Operacional (Linux) por isso é tão "baixo" nível. 
 Portanto, é mais difícil programar em C (como dançar num salão bem encerado, com várias facas na mão). Os perigos maiores são devido aos ponteiros.
-Regras: assista Binky pointer fun
+Regras: assista Binky pointer fun!
 1) Ponteiro e coisa apontada são *diferentes*
 2) Não tem sentido ponteiro que não aponta para nada.
 
@@ -212,12 +212,12 @@ nova -> seg = p->seg;   // igual
 (*nova).seg= (*p).seg; //igual
 
 
-Porque eu tenho um elemento sem nada no início?
+Porque há um elemento sem nada no início?
 Por dois motivos:
 Chama-se de cabeça esse elemento. 
 
-1) Não preciso testar lista vazia toda hora no insere (eficiência), porque sempre tenho a cabeça, nunca está vazio.
-2) Não preciso usar ponteiros para conteiros (clareza). Se não tiver cabeça preciso alterar lst que aponta para o início, só que lst é um ponteiro e se eu passar o endereço de um ponteiro, isso vira no insere ponteiro para ponteiro. 
+1) Não precisa testar lista vazia toda hora no insere (eficiência), porque sempre tenho a cabeça, nunca está vazio.
+2) Não precisa usar ponteiros para ponteiros (clareza). Se não tiver cabeça precisa alterar lst que aponta para o início, só que lst é um ponteiro e se passar o endereço de um ponteiro, isso vira no insere ponteiro para ponteiro. 
 
 
 <h5> Ponteiros são muito usados em C </h5>
@@ -244,10 +244,10 @@ B) Uso cabeça de lista, porque assim se tem duas vantagens:
    <br/>
 	B2) Não usa ponteiros para ponteiros. 
 
-* & aponta para ponteiro que já é ponteiro 
-* int * p = é usado na declaração para dizer que é ponteiro e no acesso para indiretamente mudar o enreço 
-* & passa a posição na memória de uma variável (acessar de longe o k)
-* (*p). conteudo = p -> conteudo (flecinha serve para trocar (*p))
+* & aponta para ponteiro que já é ponteiro;
+* int * p = é usado na declaração para dizer que é ponteiro e no acesso para indiretamente mudar o enreço;
+* & passa a posição na memória de uma variável (acessar de longe o k);
+* (*p). conteudo = p -> conteudo (flecinha serve para trocar (*p));
 
 ```
 int * p;
