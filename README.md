@@ -308,6 +308,8 @@ além disso, id(a) será diferente que id(b)
 
 <h5> Problema: quero saber o vetor de distâncias mínimas da cidade origem 3 até as outras cidades. </h5>
 
+![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/matriz.jpeg)
+
 Em primeiro lugar precisa-se de uma estrutura de dados para representar o desenho. 
 Existem duas possibilidades:
 
