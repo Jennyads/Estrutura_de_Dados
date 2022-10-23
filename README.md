@@ -269,19 +269,19 @@ for k in range (10000000000000000000000000000):
 
 3) Algoritmos probabilísticos 
 
-Vamos ver exemplos de resolução de exercícios onde esses detalhes todos em C são importantes:
+Exemplos de resolução de exercícios onde esses detalhes todos em C são importantes:
 ```
 1) Lista Ligada Vetor para Lista.c (exercício 9)
-   Percorro o vetor ao contrário, porque insiro no início da lista
+   Percorre o vetor ao contrário, porque insire no início da lista
 
 2) Lista Ligada Concatena.c (exercício 10)
-   Ando até o final da primeira lista,
-   Aponto o final para o inicío da segunda, 
-   Devolvo para a memória a cabeça da segunda 
-(cabeça é o que declaro com o malloc(função)) 
+   Anda-se até o final da primeira lista,
+   Aponta-se o final para o inicío da segunda, 
+   Devolve-se para a memória a cabeça da segunda 
+   (cabeça é o que se declara com o malloc(função)) 
 
 3) Lista Ligada Libera.c (exercício 18)
-   Antes de devolver para a memória preciso salvar o seguinte, senão não sei mais para onde devo ir. 
+   Antes de devolver para a memória é necessário salvar o seguinte, senão não se sabe mais para onde deve ir. 
 
 4) Inversão e Josephus não cai na prova (exercício 19 e 20).
 ````
