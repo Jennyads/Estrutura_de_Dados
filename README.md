@@ -527,7 +527,7 @@ Se no final de tudo sobrou menino, também deu ruim
 ```
 
 
-<h5> Busca Binária </h5>
+<h3> Busca Binária </h3>
 
 ```
 def dec2bin(n):
@@ -927,7 +927,7 @@ print (t2-t1)
 Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 1 + 2 + 4 + 16 + 32 + ...
 
-<h5> Árvore Binária </h5>
+<h3> Árvore Binária </h3>
 
 ![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/arvorebinaria.png)
 
