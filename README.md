@@ -1016,7 +1016,7 @@ def fib(n):
  O decorador @lru_cache faz um envelope da função, dando super poderes para a função debaixo.
  
  
- - Ponteirs e Listas Ligadas(Encadeadas):
+ - Ponteiros e Listas Ligadas(Encadeadas):
 
 
  Vetores em C tem dados contíguos (um do ladinho do outro). C é uma linguagem de baixo nível (feita para construção de um sistema operacional - Linux). Em C é muito rápido mover grandes áreas de dados, porém para inserir ou remover num vetor, em C, é muito ineficiente, principalmente no início do vetor, porque precisa mover todo mundo para direita ou esquerda, para inserção, remoção. Em C resolve esse problema numa estrutura de dados, chamada lista ligada (caça ao tesouro). Na caça ao tesouro, os locais estão em posições diferentes, o que une um local ao outro são as pistas. 
@@ -1040,7 +1040,9 @@ struct cel {
 ```
 
 Listas encadeada tem muitos detalhes: 
+
 1) Insere no começo, porque é ineficiente andar até o fim para inserir, por isso se quero uma lista 1 2 3 precisa inserir 3 2 1.
+
 2) Usa cabeça de lista, para duas coisas: // cabeça é um elemento sem conteúdo
    2.1) Não precisa mais testar lista vazia no insere.
    2.2.) Não usa ponteiros para ponteiros, lst é o ínicio da lista, se começa sem cabeça, lst começa com NULL e vai precisar alterar dentro de insere, ora, lst deverá ser passado por endereço, mas o endereço de uma coisa que já ponteiro, virá ponteiro para ponteiro, o que é muiyo difícil de entender e dar manutenção. 
