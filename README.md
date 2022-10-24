@@ -697,9 +697,8 @@ print (t2-t1)
 ##print (v)
 ```
 
-- Outra ideia:
-
- Percorrer da esquerda para direita e para cada elementos, verificar o menor que está adiante.
+- Outra ideia é a seleção:
+ Percorre da esquerda para direita e para cada elementos, verifica o menor que está adiante.
  Então, troca-se a posição atual com o menor que se encontrou pela frente.
  Seleção, porque seleciona e troca.
  
