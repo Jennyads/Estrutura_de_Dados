@@ -526,7 +526,7 @@ Se no final de tudo sobrou menino, também deu ruim
 ```
 
 
-<h3> Busca Binária </h3>
+<h5> Busca Binária </h5>
 
 ```
 def dec2bin(n):
@@ -926,6 +926,22 @@ print (t2-t1)
 Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 1 + 2 + 4 + 16 + 32 + ...
 
+<h5> Árvore Binária </h5>
+![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/arvorebinaria.png)
+
+É binária porque em cada nó tem no máximo dois filhos para baixo, cada um dos nós tem dois filhos para baixo.
+
+Árvore binária de busca balanceada:
+Filhos da esquerda são menores ou igual e filho da direita são maiores ou igual.
+Se procurar qualquer elemento a partir da raiz, vai gastar log(n,2) passos.
+Se baixar todos os nós na vertical dá o vetor ordenado 0 1 2 3 4 5 6 7 8 9, mesma ordem que vetor ordenado!
+É muito rápido a busca em vetor ordenado, pois divide em 2 e descarta a outra metade. 
+Em termos de busca é igual vetor ordenado e árvore binária de busca!
+
+Vantagens: Inserir ou remover em vetor ordenado é muito ruim, principalmente em c (vetores contíguos que empurra todo mundo para a direita, ou para remover puxar todo mundo para esquerda).
+Em termos de inserção e remoção é muito mais rápido em árvore binária, pois utiliza ponteiros.
+Usa-se em índices de banco de dados.
+No pior caso, se tiver árvore desbalanceada!
 
 <h4> Revisão </h4>
 Algoritmos de Ordenação
