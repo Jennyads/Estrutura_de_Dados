@@ -748,8 +748,7 @@ t1 = time()
 seleção(v)
 t2 = time()
 print (t2-t1)
-```
- 
+``` 
 
 Repare que seleção, se não usar função embutida, é pior que inserção, porque inserção tem casos ruins e casos bons, no caso da seleção *sempre* precisa ir até o fim para descobrir o menor.
 Na média, inserção é melhor que seleção. O único caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
@@ -808,8 +807,19 @@ Agora sim, demorou apenas 0,1 segundos!
 
 Quicksort usa sempre um pivô (voluntário).
 Divide-se em duas partes, menores que o pivô e maiores que o pivô.
-Assim, tem-se o pivô na posição correta. Repete-se o processo para cada metade.
-Assim, vai dobrando a cada passo o número de pessoas na posição correta.
+Assim, tem-se o pivô na posição correta e definitiva. Repete-se o processo para cada metade.
+Assim, vai dobrando a cada passo o número de pessoas na posição correta (dividindo em duas partes sempre, dobra o número de elementos ordenados no passo seguinte).
+
+```
+1 0 2 6 3 4 7 5
+0 1 2 6 3 4 7 5 //lado esquerdo resolvido porque o 0 só tem tamanho 1
+    2 6 3 4 7 5 //com pivo 2 não tem lado esquerdo e todos do direito são maiores
+      3 4 5 6 7 // 3 4 5 são maiores que 6, então ele já fica na posição definitiva e 7 acaba
+      3 4 5 //3 é pivo
+        4 5 //tamanho um, para
+```
+Observação: pior caso é o vetor ordenado, pois não é possível dividir o mundo em dois. Porém é muito raro! Na média, como divide em 2, tem log(n,2) * passos. Para vetores pequenos não se consegue ver a vantagem, o ideal é pensar no acumulado 1 + 2 + 4 + 8... de elementos na posição ordenada.
+
 
 * Quicksort.py
 
