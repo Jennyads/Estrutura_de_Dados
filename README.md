@@ -460,7 +460,7 @@ Tem dados contíguos, isto é, um do lado do outro. Isto tem vantagens para gran
 
 Em C usa ponteiro para: 
 1) Passagem de variáveis numa função por referência. Se tem variáveis locais, que se deseja mudar na função, precisa-se passar o endereço delas.
-2) Vetores de aloação dinâmica. Pode-se definir o tamanho do vetor em tempo de execução, isto é, quando o programa já está rodando. Em linguagens estáticas, precisa-se definir na declaração do vetor, o seu tamanho. 
+2) Vetores de aloação dinâmica. Pode-se definir o tamanho do vetor em tempo de execução, isto é, quando o programa já está rodando. Em linguagens estáticas, precisa definir na declaração do vetor, o seu tamanho. 
 
 Regras para o uso de ponteiros:
 1) Ponteiro e coisa apontada são diferentes.
@@ -485,14 +485,14 @@ p -> conteudo = 42; //Em C isto é o mesmo que (*p).conteudo
 
 Na lista ligada ou Lista encadeada usa CABEÇA:
 1) Evita assim perguntar toda hora se a lista é vazia. 
-2) Não usa ponteiros para ponteiros
+2) Não usa ponteiros para ponteiros.
 
 C é uma linguagem criada para construir o Linux
-Logo C é bem baixo nível, isto é, precisa-se ter mais cuidado com detalhes que linguagens de alto nível, como JAVA/Pytjon.
+Logo C é bem baixo nível, isto é, é necessário ter mais cuidado com detalhes que linguagens de alto nível, como JAVA/Pytjon.
 
 Exemplos:
-1) Ao inserir tem-se que fazer isso no ínicio, porque se inserir no final, tem-se que andar até o final. Logo, para ter uma lista 1 2 3, precisa inserir 3 2 1, ao contrário.
-2) Quando se busca o mínimo numa lista, precisa-se devolver um ponteiro.
+1) Ao inserir tem que fazer isso no ínicio, porque se inserir no final, tem que andar até o final. Logo, para ter uma lista 1 2 3, precisa inserir 3 2 1, ao contrário.
+2) Quando se busca o mínimo numa lista, é necessário devolver um ponteiro.
 3) Ao devolver todos os elementos de uma lista para a memória, precisa guardar o seguinte *antes* de dar free na célula, pois se der free se perde o seguinte. 
 4) Para implementar a inversão de uma lista, precisa-se de 3 ponteiros auxiliares, um para a posição atual, outro para a anterior, e outra para a seguinte.
 	Quando se está em uma posição, precisa-se saber o anterior, porque não tem campo de anterior, só seguinte. Na hora em que atualizar o ponteiro atual, para apontar para o anterior, se perde o seguinte!
