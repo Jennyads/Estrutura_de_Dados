@@ -308,6 +308,7 @@ além disso, id(a) será diferente que id(b)
 
 <h5> Problema: quero saber o vetor de distâncias mínimas da cidade origem 3 até as outras cidades. </h5>
 
+
 ![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/matriz.jpeg)
 
 Em primeiro lugar precisa-se de uma estrutura de dados para representar o desenho. 
@@ -927,6 +928,7 @@ Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 1 + 2 + 4 + 16 + 32 + ...
 
 <h5> Árvore Binária </h5>
+
 ![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/arvorebinaria.png)
 
 É binária porque em cada nó tem no máximo dois filhos para baixo, cada um dos nós tem dois filhos para baixo.
