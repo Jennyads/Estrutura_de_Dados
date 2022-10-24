@@ -136,7 +136,7 @@ Obs.: Embora armazenar dados exija mais espaço, evita repetição.
 
 
 Usando dicionário, guarda-se as respostas já calculadas. Assim não se repete mais e o programa fica muito mais rápido.
-Porém usando o dicionário meu código fica mais feio. 
+Porém usando o dicionário o código fica mais feio. 
 
 Dicionário = estrutura chave-valor.
 
