@@ -1035,7 +1035,7 @@ Algoritmos de Força Bruta são ruins no tempo, porém, muito usados quando não
 Porque se estuda algoritmos lentos? Porque muitas vezes não tem outra solução. E além disso tem muita diferença entre cada um dos algoritmos lentos. 
 
 Existem duas famílias:
-1) Gerar todos os subconjuntos, custa 2 ** n
+1) Gerar todos os subconjuntos, custa 2 ** n-1
 2) Gerar todas as permutações, custa n!
 
 São muito diferentes:
