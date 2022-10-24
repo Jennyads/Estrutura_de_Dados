@@ -345,7 +345,7 @@ coloca o vizinho na fila
 ```
 
 Como se garante que a distância é mínima?
-Tem-se que guardar as distâmncias num local.
+Tem-se que guardar as distâncias num local.
 Sugestão: a distância é sempre positiva, inicia-se com -1 para dizer que nunca passou por lá. 
 
 Distâncias em um Rede.py
