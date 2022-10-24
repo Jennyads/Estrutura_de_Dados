@@ -466,7 +466,7 @@ Regras para o uso de ponteiros:
 1) Ponteiro e coisa apontada são diferentes.
 2) Não tem sentido usar um ponteiro que não inicializa.
 
-A Caça ao Tesuouro é feita assim:
+A Caça ao Tesouro é feita assim:
 
 ```
 struct cel {
@@ -753,7 +753,7 @@ Repare que seleção, se não usar função embutida, é pior que inserção, po
 Na média, inserção é melhor que seleção. O único caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
 Nesse caso só é pior, porque está utilizando uma função do python, min que é otimizada para pegar os menores.
 
-Melhorando isso com a ideia de dividir o mundo em dois:
+Melhorando isso com a ideia de dividir o mundo em dois com Mergesort:
 
 ```
 4 3 6 0         1 2 5 7        2 quadruplas
