@@ -1055,9 +1055,9 @@ Na corte do Rei Arthur têm 250 damas e 250 cavaleiros. O Rei Arthur passa dois 
 1) Casar todos as damas, respeitando suas preferências de cavaleiros.
 2) Colocar todos os cavaleiros em torno de uma mesa, chamada de Távola Redonda, sem que briguem. Então os dois vizinhos tem que ser amigos.
 
-Os dois problemas são muito difícies, concretamente, hoje se prova que vamos gastar todo o tempo do universo para resolver, o número de possibilidades é maior que o número de prótons existentes. 
+Os dois problemas são muito difícies, concretamente, hoje se prova que iria ser gasto todo o tempo do universo para resolver, o número de possibilidades é maior que o número de prótons existentes. 
 
-Qual a estratégia de Merlim? Vamos tentar convercer o Rei que não vale a pena tentar resolver os dois problemas. 
+Qual a estratégia de Merlim? Tentar convercer o Rei que não vale a pena tentar resolver os dois problemas. 
 
 1) Se tiver um subconjunto de damas, que tem preferidos em número menor, então é fácil mostrar para  o Rei que não é possível. É preciso de apenas um programa que gere todos os subconjuntos.
 2) Será que tem uma forma fácil de convercer o rei sobre o problema dos cavaleiros?
