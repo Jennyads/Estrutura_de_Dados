@@ -934,6 +934,8 @@ Mergesort dobra a cada passo, porém quicksort não apenas dobra, mas acumula.
 É binária porque em cada nó tem no máximo dois filhos para baixo, cada um dos nós tem dois filhos para baixo.
 
 Árvore binária de busca balanceada:
+
+
 Filhos da esquerda são menores ou igual e filho da direita são maiores ou igual.
 Se procurar qualquer elemento a partir da raiz, vai gastar log(n,2) passos.
 Se baixar todos os nós na vertical dá o vetor ordenado 0 1 2 3 4 5 6 7 8 9, mesma ordem que vetor ordenado!
@@ -959,11 +961,11 @@ Desvantagens: mergesort, apesar de rápido, gasta mais espaço.
 Vantagens: as partes do vetor divididas são independentes e pode ser resolvido de forma assíncrona. 
 
 Quicksort: divide em maiores ou menores que um pivô e repete sucessivamente até todos estarem na posição final. O interessante do quicksort é que o número de pessoas na posição final cresce muito mais rápido que mergesort. 
-Quicksort é acumulativo, não só dobra. mas acumula os anteriores.
+Quicksort é acumulativo, não só dobra, mas acumula os anteriores.
 
 Total: 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128 + 256 + 512 + 1024
 
-Análise detalhada: Qual é o pir caso? Vetor já ordernado, sempre não vai ninguém para um dos lados, o que resulta que não dobra o número a cada passo, e pior, vai demorar n passos até todo mundo ficar na posição.
+Análise detalhada: Qual é o pior caso? Vetor já ordernado, sempre não vai ninguém para um dos lados, o que resulta que não dobra o número a cada passo, e pior, vai demorar n passos até todo mundo ficar na posição.
 Então no total vai gastar n * n, tão ruim quanto inserção e seleção na prática nunca encontra um vetor ordenado. Então na média quicksort é muito bom!
 ```
 Revisão Geral:
