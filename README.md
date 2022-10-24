@@ -386,15 +386,15 @@ Viu-se que o problema de Distâncias Mínimas Rede
 A Figura ajuda a entender o problema, porém o computador não consegue processar a figura.
 Existem duas possibilidades de Estruturas de Dados para a figura.
 1) Matriz, vantagem que testa rápido se é vizinho, gasta um pouco mais de memória, mas o número de cidades não é grande.
-2) Dicionário, gasta menos memória, porém é pior para testar se alguém é vizinho , porque preciso percorrer uma lista para saber disso. 
+2) Dicionário, gasta menos memória, porém é pior para testar se alguém é vizinho , porque precisa percorrer uma lista para saber disso. 
 
 Precisa-se de uma Estrutura para guardar as cidades a medida em que são visitadas. Para isso usa-se uma fila, onde o primeiro que entra é o primeiro que sai. 
 Entra elemento na fila com f.append(x).
 Sai elemento com f.pop(0), isto é, remove o primeiro, passa zero, porque remove o segundo.
 
-Por último, precisa-se garantir que a distância é mínima, para isso colaca-se -1 no vetor de distância, assim sabe-se que é a primeira vez que chega naquela cidade, se já chegou antes, então o caminho anterior é melhor.
+Por último, precisa-se garantir que a distância é mínima, para isso coloca-se -1 no vetor de distância, assim sabe-se que é a primeira vez que chega naquela cidade, se já chegou antes, então o caminho anterior é melhor.
 
-Com essas 3 Estruturas de Dados, o código fica apenas com 12 linhas, isto é, fica mais fácil programar se sabe usar bem Estruturas de Dados.
+Com essas 3 Estruturas de Dados, o código fica apenas com 12 linhas, isto é, fica mais fácil programar se saber usar bem Estruturas de Dados.
 
 Apesar de ser um código de 12 linhas e escrito em Python (que é mais simples), náo é um código trivial, porque tem 3 Estruturas de Dados que são bem difíceis de entender.
 
@@ -421,7 +421,7 @@ Programar melhor com DADOS
 Para saber que um programa é melhor preciso saber medir a eficiência.
 Atenção: não se esqueça que programa eficiente tem menos passos e também ocupa menos memória.
 Em geral acaba compensando gastar um pouco mais de espaço para ter maior velocidade.
-Exemplo: índice de banco de dados, cabeça de lista ligda, matriz para o problema de rede.
+Exemplo: índice de banco de dados, cabeça de lista ligada, matriz para o problema de rede.
 
 Programas recursivos: funções que se chama a si próprias.
 
@@ -452,7 +452,7 @@ if n<=2: return 1
   return fib(n-1) + fib(n-2)
 ```
 O código acima não repete chamada, pois se estiver na memória já pega. 
-Quando coloca o decorador @lru_cache, faz-se um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
+Quando coloca o decorador @lru_cache que faz um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
 
 <h5> Vetores em C </h5>
 
@@ -484,8 +484,8 @@ p -> conteudo = 42; //Em C isto é o mesmo que (*p).conteudo
 ```
 
 Na lista ligada ou Lista encadeada usa CABEÇA:
-1) Evito assim perguntar toda hora se a lista é vazia. 
-2) Não uso ponteiros para ponteiros
+1) Evita assim perguntar toda hora se a lista é vazia. 
+2) Não usa ponteiros para ponteiros
 
 C é uma linguagem criada para construir o Linux
 Logo C é bem baixo nível, isto é, precisa-se ter mais cuidado com detalhes que linguagens de alto nível, como JAVA/Pytjon.
@@ -591,12 +591,12 @@ print (cont)
 ```
 
 Por isso, busca binária é como a invenção da roda, reaproveita-se a ideia de dividir o mundo em dois em vários outros contextos.
-O oposto também é rápido, se dobra o número de resultados bons a cada passo.
+O oposto também é rápido, dobra-se o número de resultados bons a cada passo.
 
 
 Suponha que precise desenhar, numa folha de papel 128 retângulos.
 Existem duas formas básicas:
-1) Mede-se largura e comprimento, divida a folha em 128 retângulos, desenhando-se um por um.
+1) Mede-se a largura e comprimento, divida a folha em 128 retângulos, desenhando-se um por um.
 2) Pode-se dobrar a folha no meio, e depois dobrar novamente no meio e assim pr diante em 7 passos tem-se 128 retângulos.
 
 Se tem uma lista telefonica (páginas amarelas) e se deseja descobrir um telefone, abre-se no meio para ir mais rápido. Essa é a mesma ideia de busca binária!
@@ -719,11 +719,13 @@ print (t2-t1)
  
  Quanto custa seleção?
  
+ ```
  Precisa percorrer todos: custa n passos.
  Para cada, precisa verificar o menor: custa n passos.
  Logo, no total custa n*n = n ** 2 passos
  Será que pode melhorar isso: Sim
  Para calcular o menor, tem-se uma função min do Python que é otimizada.
+ ```
  
  * Seleção.py
  
@@ -750,7 +752,7 @@ print (t2-t1)
  
 
 Repare que seleção, se não usar função embutida, é pior que inserção, porque inserção tem casos ruins e casos bons, no caso da seleção *sempre* precisa ir até o fim para descobrir o menor.
-Na média, inserção é melhor que seleção. O únicp caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
+Na média, inserção é melhor que seleção. O único caso em que são ambos no pior caso, é quando se tem um vetor em ordem decrescente. Esse caso é muito raro, então, na média, inserção é melhor que seleção.
 Nesse caso só é pior, porque está utilizando uma função do python, min que é otimizada para pegar os menores.
 
 Melhorando isso com a ideia de dividir o mundo em dois:
@@ -802,7 +804,7 @@ print (t2-t1)
 ```
 Agora sim, demorou apenas 0,1 segundos!
 
-- Melhorar mais ainda:
+- Melhorando mais ainda:
 
 Quicksort usa sempre um pivô (voluntário).
 Divide-se em duas partes, menores que o pivô e maiores que o pivô.
