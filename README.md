@@ -843,15 +843,37 @@ print (t2-t1)
 Já está ótimo em 0.5
 
 - Dá para melhorar mais ainda?
+Sim, com heapsort que usa a ideia de Busca Binaria noa índices do vetor.
+Segue dois passos: 
+```
+1)colocar todos numa estrutura chamada heap, onde o índice k tem conteúdo maior ou igual que seus dois "filhos" 2*k e 2*k+1. No final, o primeiro será o maior de todos, não garantindo a ordenação do resto. 
+2)Troca o primeiro com o último, assim entra um elemento "fraco" na primeira posição, assim ele é "sacudido" até ele descer à sua posição correta. 
 
-Pode usar a ideia de dividir o mundo eem dois andando pelos índices do vetor.
+Note que colocar todo mundo na estrutura de heap, ou fazer o processo de "sacode" é rápido, log(n,2) passos. 
+
+Teste de mesa:
+1 2 3 4 5 6 7 8  //índices para não se bagunçar e saber identificar que, é pai e filho.
+                 Não começa com índice 0 para dar certo a conta do 2*k e 2*k+1
+1 0 2 6 3 4 7 5  //1 e 0 está e heap
+2 0 1            //2(pai) maior que seus dois filhos ( 0 1)
+2 6 1 0          //6 vai no índice dividido por 2 que é o 0
+6 2 1 0          //6 sobe mais uma posição pq o pai do pai é o 2 que é fraco
+6 3 1 0 2        //3 entra no lugar do 2 que é o pai dele
+6 3 4 0 2 1      //4 entra no lugardo 1 que é o pai dele 
+6 3 7 0 2 1 4    //7 troca com 4 que é pai dele
+7 3 6 0 2 1 4
+7 3 6 5 2 1 4 0  //5 troca com 0 que é seu pai
+7 5 6 3 2 1 4 0 //troca com o pai do pai
+Aqui chegou na estrutura de heap, gastando log(n,2) * n passos
+```
+Pode usar a ideia de dividir o mundo em dois andando pelos índices do vetor.
 Assim, vai dobrando o índice a cada passo para andar para a direita e vai dividindo o índice pela metade a cada passo para andar no final para o começo. 
 Essa estrutura é chamada heap.
 
 * heapsort.py 
 
 Usa estrutura do python!
-
+Observação: não em partes independentes, então não dá para fazer em parelelo!
 ```
 from heapq import heappush, heappop
 def heapsort(v):
