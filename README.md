@@ -1274,9 +1274,10 @@ os algoritmos de ordenação
 ```
 
 O jeito tradicional é sequencial, pode ser da direita para a esquerda, ou pode ser da esquerda para a direita. Para efeito de comparação, vamos fazer a comparação de trás para frente, isto é, direita para a esquerda, primeira letra da palavra é "o", depois "m".
-
+```
 Os algoritmos de ordenação
 algoritmo
+```
 Como melhoras o algoritmo sequencial?
 Olhando os dados! Qual dado? A palavra que está sendo procurada: "algoritmo"
 No algoritmo sequencial dá pulos de 1 em 1, sempre não bate, será que pode dar pulos maiores do que 1, usando a palavra?
@@ -1284,13 +1285,13 @@ No algoritmo sequencial dá pulos de 1 em 1, sempre não bate, será que pode da
 ```
 os algoritmos de ordenação
                       algortimo
-aqui foi dado 3 pulos apenas para descobrira mesma ocorrência da palavra. Precisa fazer um pré-processamento da palavra e montar uma tabela "pulos".
+*Aqui foi dado 3 pulos apenas para descobrir a mesma ocorrência da palavra. Precisa fazer um pré-processamento da palavra e montar uma tabela "pulos".
 ```
 
 1) Se a tabela faz parte da palavra, pode pular  o deslocamento dela, para encaixar a próxima letra da frase, com a letra na posição certa na palavra.
 2) Se a letra não faz parte, pode pular todo o tamanho da palavra.
 
-Note que a maior parte das vezes, a próxima letra não faz parte da palvra, permitindo pulos gigantes a maior parte das vezes. Também, quando a próxima letra
+Note que a maior parte das vezes, a próxima letra não faz parte da palavra, permitindo pulos gigantes a maior parte das vezes. Também, quando a próxima letra
 faz parte, sempre dará pulos maiores que 1, com exceção da última letra da palavra. 
 
 Será que custa muito processar a palavra e criar esta tabela . Em geral a palavra é muito menor que o texto onde está procurando.
