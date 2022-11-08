@@ -194,3 +194,51 @@ if n<=2: return 1
 ```
 O código acima não repete chamada, pois se estiver na memória já pega. 
 Quando coloca o decorador @lru_cache que faz um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
+
+
+Revisão Geral:
+
+* Funções recursivas (são aquelas que chamam a si próprias). 
+Faz repetições sem for e sem while, usando o retorno do dado para fazer a composição final do que quer:
+```
+def função_recursiva(argumentos):
+   if caso mais simples: 
+  	retorno valor que sei de antemão
+   retorno uma composição diminuindo algum dos argumentos
+```
+```
+def fib(n): 
+  if n == 1: return 1
+  return n * fat(n-1)
+  
+def fib (n):
+  if n == 1 or n == 2: return 1
+  return fib(n-1) + fib(n-2)
+```
+
+Fibonacci recursivo acima não é eficiente, porque repete contas já feitas. 
+Como resolve essa ineficiência? (repetir cálculos já feitos).
+Usando estruturas de dados para guardar os cálculos e não repetir mais.
+
+
+#Forma1: usando dicionários para guardar o que já fez
+
+```
+dic = {}
+def fib(n): 
+  if n == 1 or n == 2: return 1
+  if n not in dic: dic[n] = fib(n-1) + fib(n-2)
+  return dic[n]
+```
+
+#Forma2: usando o cache do Sistema Operacional
+
+```
+from functools import lru_cache
+def fib(n):
+  if n == 1 or n == 2: return 1
+  return fib(n-1) + fib(n-2)
+ ```
+ 
+ Nesse exemplo, usa a memória do sistema operacional para guardar os cálculos já feitos.
+ O decorador @lru_cache faz um envelope da função, dando super poderes para a função debaixo.
