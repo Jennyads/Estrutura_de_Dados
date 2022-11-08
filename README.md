@@ -11,4 +11,5 @@
 * [Busca Binária](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Busca_Bin%C3%A1ria.md)
 * [Algoritmos de Força Bruta, Backtracking ou Enumeração](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Algoritmo_For%C3%A7a_Bruta.md)
 * [Busca de Palavras](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Busca_Palavras.md)
+* [Teoria dos Grafos](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Teoria_dos_Grafos.md)
 
