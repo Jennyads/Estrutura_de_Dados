@@ -1,0 +1,148 @@
+<h3> Ponteiros </h3>
+
+Vetores em C usam dados contíguos, um dado do ladinho do outro.
+Vantagem é movimentar rápido grandes massas de dados.
+Desvantagem é inserir ou remover, pois tem que mover todos os elementos da direita. 
+Como resolve essa ineficiência?
+Usando ponteiros, assim há dados que não são contíguos e para inserir ou remover basta mudar ponteiros. 
+Isso lembra Caça ao Tesouro.
+Como implementar isso?
+
+
+```
+struct {
+   int conteudo;
+   struct cel * seg; //seguinte
+}
+type struct cel celula;
+```
+
+Existem duas formas de se passar argumentos para uma função em C.
+1) Passagem por valor, somente uma cópia das variáveis.
+2) Passagem por referência, isto é ponteiros para as variáveis de origem. 
+
+
+Python também faz tudo por referência, mas ao alto nível C foi desenhada para construir um Sistema Operacional (Linux) por isso é tão "baixo" nível. 
+Portanto, é mais difícil programar em C (como dançar num salão bem encerado, com várias facas na mão). Os perigos maiores são devido aos ponteiros.
+Regras: assista Binky pointer fun!
+1) Ponteiro e coisa apontada são *diferentes*
+2) Não tem sentido ponteiro que não aponta para nada.
+
+* Lista ligada com cabeça com alocação dinâmica.c
+
+É melhor inserir elementos novos no final ou no começo da lista??
+No começo, porque se inserir no final tenho que andar até o final, isto é ineficiente. Pode-se imaginar um milhão de elementos, se tiver que andar até o final vai gastar muito tempo.
+
+Quando se programa em Python ou Java não é necessário olhar todos esses detalhes, porque são linguagens de alto nível.
+
+ - O que significam as flechas?
+São o conteúdo de um ponteiro que é struct.
+
+```
+struct cel {
+    int conteudo;
+    struct cel seg;
+}
+typedef struct cel celula;
+celula * nova;
+nova = malloc(sizeoff(celula));
+nova -> conteudo = y;  // jeito diferente de representar
+(*nova).conteudo = y; // mesma coisa
+````
+
+nova -> seg = p->seg;   // igual
+(*nova).seg= (*p).seg; //igual
+
+
+Porque há um elemento sem nada no início?
+Por dois motivos:
+Chama-se de cabeça esse elemento. 
+
+1) Não precisa testar lista vazia toda hora no insere (eficiência), porque sempre tenho a cabeça, nunca está vazio.
+2) Não precisa usar ponteiros para ponteiros (clareza). Se não tiver cabeça precisa alterar lst que aponta para o início, só que lst é um ponteiro e se passar o endereço de um ponteiro, isso vira no insere ponteiro para ponteiro. 
+
+
+<h5> Ponteiros são muito usados em C </h5>
+
+1) Passagem de variável por referência;
+2) Vetor de alocação dinâmico.
+
+Regras:
+1) Ponteiro e coisa apontada são diferentes:
+```
+int *p; 
+p = malloc(sizeuf(int));
+//são coisas diferentes 
+```
+2) Não tem sentido ponteiro não inicializado.
+
+Com ponteiros se implementa "Caça ao Tesouro", isto é, Listas Ligadas ou Listas Encadeadas. Detalhes de implementação:
+<br/>
+A) Insere no começo, porque andar até o fim é ineficiente, logo, se quer 1 2 3, precisa inserir ao contrário 3 2 1.
+<br/>
+B) Uso cabeça de lista, porque assim se tem duas vantagens:
+<br/>
+	B1) Não precisa testar lista vazia;
+   <br/>
+	B2) Não usa ponteiros para ponteiros. 
+
+* & aponta para ponteiro que já é ponteiro;
+* int * p = é usado na declaração para dizer que é ponteiro e no acesso para indiretamente mudar o enreço;
+* & passa a posição na memória de uma variável (acessar de longe o k);
+* (*p). conteudo = p -> conteudo (flecinha serve para trocar (*p));
+
+```
+int * p;
+int k;
+p = & k;
+*p = 42;
+```
+
+Apesar de C conseguir otimizar código no baixo nível, hoje se têm soluções boas no alto nível:
+1) Concorrência em Go, NodeJS
+2) iteradores com yield em Python 
+
+```
+for k in range (10000000000000000000000000000):
+	if k == 42:
+		print('achei')
+		break
+```
+
+3) Algoritmos probabilísticos 
+
+Exemplos de resolução de exercícios onde esses detalhes todos em C são importantes:
+```
+1) Lista Ligada Vetor para Lista.c (exercício 9)
+   Percorre o vetor ao contrário, porque insire no início da lista
+
+2) Lista Ligada Concatena.c (exercício 10)
+   Anda-se até o final da primeira lista,
+   Aponta-se o final para o inicío da segunda, 
+   Devolve-se para a memória a cabeça da segunda 
+   (cabeça é o que se declara com o malloc(função)) 
+
+3) Lista Ligada Libera.c (exercício 18)
+   Antes de devolver para a memória é necessário salvar o seguinte, senão não se sabe mais para onde deve ir. 
+
+4) Inversão e Josephus não cai na prova (exercício 19 e 20).
+````
+
+```
+Python Referencia 
+a = [1, 2 ,3]
+b = a
+a[0]= 42
+id(a) será o mesmo que id(b)
+
+
+para ser diferente tenho que criar um novo objeto, cópia de a 
+b = list(a)
+
+a = [1,2,3]
+b = lista(a)
+a[0]= 42
+a será [42,2,3]
+b será [1,2,3]
+além disso, id(a) será diferente que id(b)
+```
