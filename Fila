@@ -92,3 +92,16 @@ Com essas 3 Estruturas de Dados, o código fica apenas com 12 linhas, isto é, f
 Apesar de ser um código de 12 linhas e escrito em Python (que é mais simples), náo é um código trivial, porque tem 3 Estruturas de Dados que são bem difíceis de entender.
 
 Em geral, é maus importante a arquitetura do que a linguagem para escalabilidade do seu sistema. 
+
+
+<h5> Revisão Filas </h5>
+
+Problema de distâncias mínimas numa rede
+
+Usou-se 3 Estruturas de Dados:
+1) Precisou-se representar o desenho. Existem duas possibilidades: matriz ou dicionário. A matriz gasta um pouco mais de espaço, mas para perguntar se é vizinho, é muito mais rápido.
+2) Usa-se uma FILA para guardar as cidades onde está chegando, assim, na próxima iteração, pode-se avançar para novas cidades.
+3) Tem um vetor de distâncias que começa com -1, sinalizando que é a primeira vez que se chega lá. Assim, garante-se que a distância final é mínima.
+O código tem apenas doze linhas. Mas não é por ter poucas linhas que ele é fácil, ele tem 3 estruturas de dados, que são mais difícies de entender do que as linhas de código. 
+Na vida real, muitas vezes terá um sistema mais eficaz, se escolher a arquitetura bem. Isto é, modelar bem o banco de dados, escolher bem o tipo de banco de dados. 
+
