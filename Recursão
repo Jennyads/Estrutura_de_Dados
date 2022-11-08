@@ -155,3 +155,42 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 print(fib(100))
 ```
+
+<h3> Estrutura de Dados = Algoritmos II </h3>
+
+Programar melhor com DADOS
+Para saber que um programa é melhor preciso saber medir a eficiência.
+Atenção: não se esqueça que programa eficiente tem menos passos e também ocupa menos memória.
+Em geral acaba compensando gastar um pouco mais de espaço para ter maior velocidade.
+Exemplo: índice de banco de dados, cabeça de lista ligada, matriz para o problema de rede.
+
+Programas recursivos: funções que se chama a si próprias.
+
+```
+def fat(n):
+  if n <= 1: return 1 #caso mais simples, sei a resposta
+  return n * fat(n-1) #diminuindo o argumento da função
+```
+
+Está se fazendo repetições sem while e sem for. Como? no return, isto é usando DADOS.
+Nem sempre código recursivo é eficiente. 
+
+```
+def fib(n):
+  if n<=2: return 1
+  return fib(n-1) + fib(n-2)
+```
+
+Não é eficiente, porque repete coisa já feita. 
+Como melhorar? Usando DADOS!
+Duas formas?
+1) Usando um dicionário para guardar os valores passados.
+2) Usando lru_cache, isto é, a memória do Sistema Operacional para guardar os cálculos já feitos from functools import lru_cache
+
+```
+@lru_cache(maxsize = None)
+if n<=2: return 1
+  return fib(n-1) + fib(n-2)
+```
+O código acima não repete chamada, pois se estiver na memória já pega. 
+Quando coloca o decorador @lru_cache que faz um envelope da função fibonacci, onde o Sistema Operacional sabe que deve guardar todas as chamadas e antes de fazer uma nova chamada, verifica se ela se encontra na memória. 
