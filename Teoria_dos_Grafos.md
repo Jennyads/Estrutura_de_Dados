@@ -59,6 +59,8 @@ Por exemplo 000 é ligado com 001 010 e 100
 Vendo de cima, e aumentando o quadrado de baixo e diminuindo o quadrado de cima, é possível ver que o grafo é PLANAR, ou seja, não cruza a  linha.
 Existem 3 casamentos onde todos os vértices se unem, ou todas as horizontais, ou todas as verticais ou todas as diagonais. 
 
+![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/cubo_Q3.jpeg)
+
 Resolve o problema das damas (Emparelhamento máximo)
 
 Diagonais: 000-100, 110-010, 001-101, 111-011
