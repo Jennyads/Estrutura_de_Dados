@@ -18,7 +18,9 @@ G[d] = [a]
 
 Cavalo 3-por-3 cai na prova, porque ele tem muitas propriedades raras:
 
-![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/cavalo_3_por3.jpeg)
+<figure>
+  <img width="500" class="center" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/cavalo_3_por3.jpeg">
+</figure>
 
 1) Pode ser desenhado sem cruzar as linhas, o nome desse tipo de grafo é planar. 
 É importante desenhar sem cruzar as linhas para verificar outras possibilidades!
