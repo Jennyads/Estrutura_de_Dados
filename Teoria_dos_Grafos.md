@@ -8,14 +8,18 @@ Têm-se duas formas de representar um grafo:
 
 Na prática, em geral, usa-se dicionários
 Exemplo: no desenho ao lado se tem
-
+```
 G = {}
 G[a] = [b,c]
 G[b] = [b, c]
 G[c] = [a]
 G[d] = [a]
+```
 
 Cavalo 3-por-3 cai na prova, porque ele tem muitas propriedades raras:
+
+![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/cavalo_3_por3.jpeg)
+
 1) Pode ser desenhado sem cruzar as linhas, o nome desse tipo de grafo é planar. 
 É importante desenhar sem cruzar as linhas para verificar outras possibilidades!
 2) Aqui é possível resolver o problema das damas, se elas forem as letras, casamento possível: A3, B4, C1, D2
@@ -37,6 +41,7 @@ Existem alguns grafos muito importantes. São importantes porque tem algumas pro
 
 Cavalo 3-por-3
 Desenhe um tabuleiro 3x3 e coloque o primeiro vértice no canto superior esquerdo, e faça as arestas e os outros vértices, conforme os movimentos de um cavalo do xadrez. 
+![alt text](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/cavalo_3_por3.jpeg)
 
 Coloca A B C e D nas pontas do quadrado e 1 2 3 e 4 nos vértices do meio. Pega os números e passa para o lado oposto.
 
