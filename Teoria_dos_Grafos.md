@@ -82,3 +82,47 @@ Resolve o problema dos cavaleiros (Circuito Hamiltoniano)
 000-100-101-001-011-111-110-010-000
 Começa no 000, passa por todos os outros vértices, sem repetir e volta para o ínicio.
 ```
+
+Matéria nova 8 de novembro
+
+<h5>Revisão</h5>
+Grafos são muito usados na prática e é mais fácil entender a abstração por causa do desenho visual. São compostos de vértices e arestas. Apesar do desenho não alterar um grafo, algumas propriedades são mais facilmente visualizadas em determinadas formas de desenhar.
+Por exemplo: num grafo planar, sem cruzar linhas, é mais fácil resolver o problema das damas e o problema dos cavaleiros.
+
+Dois exemplos de grafos são muito importantes:
+Cavalo 3-por-3 e Cubo Q3
+Eles são: a) planares b) tem um emparelhamento máximo c) tem um circuito hamiltoniano
+Existem duas Estrutura de Dados para um grafo: a) Matriz b) Dicionário
+
+Grafo Bipartido, pode separar em vértices de cima e vértices de baixo, e *todas* as arestas são de cima para baixo.
+É uma forma de desenhar diferente, mais fácil de achar os casamentos do problema das damas.
+Essa forma de desenhar é mais fácil para ver os casamentos do que o grafo planar.
+
+Grafo bipartido completo tem todos os vértices de cima ligados com os vértices de baixo, são nomeados K n, m onde n são os vértices de cima e m os vértoces de baixo K2, 3 tem dois vértices em cima 3 3 vértices embaixo, todos de cima ligados com todos de baixo. K3, 3 tem 3 vértices em cima e 3 embaixo, todos de cima ligados com todos de baixo.
+
+Fazer o desenho do E1.25 e descubra o casamento onde todas as máquinas estarão funcionando.
+Como achar um casamento que maximize as máquinas funcionando?
+Qual a primeira máquina que deve ser escolhida em primeiro lugar?
+Escolhe a máquina que tem menos operários capazes de operá-la: máquina 1.
+Agora se B opera máquina 1, deve tirar B de todas as máquinas que ele opera. 
+Agora a máquina 4 é a que tem menos operários, logo será escolhida.
+Tira B de todas as listas.
+Agora escolhe a máquina 5, que tem apenas F para operá-la. 
+Tira 5 das listas.
+Agora escolhe 2 que tem apenas A.
+E finalmente 3 casa com o operário C.
+
+Como se torna esse algoritmo num programa?
+O primeiro é decidir a Estrutura de Dados!
+Escolhendo dicionários:
+Existem duas possibilidades: ou coloca a máquina como chave, ou o operário como chave.
+Nesse modelo, as máquinas devem estar todas funcionando, logo deve escolher a máquina como chave.
+
+```
+G = {}
+G[1] = ['B']
+G[2] = ['A', 'B', 'E', 'F']
+G[3] = ['A', 'B', 'C']
+G[4] = ['B', 'E']
+G[5] = ['B', 'E', 'F']
+```
