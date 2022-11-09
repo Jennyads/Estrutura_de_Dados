@@ -89,11 +89,16 @@ Grafos são muito usados na prática e é mais fácil entender a abstração por
 Por exemplo: num grafo planar, sem cruzar linhas, é mais fácil resolver o problema das damas e o problema dos cavaleiros.
 
 Dois exemplos de grafos são muito importantes:
-Cavalo 3-por-3 e Cubo Q3
+Cavalo 3-por-3 e Cubo Q3.
+
 Eles são: a) planares b) tem um emparelhamento máximo c) tem um circuito hamiltoniano
+
+
 Existem duas Estrutura de Dados para um grafo: a) Matriz b) Dicionário
 
-Grafo Bipartido, pode separar em vértices de cima e vértices de baixo, e *todas* as arestas são de cima para baixo.
+Grafo Bipartido
+
+Pode separar em vértices de cima e vértices de baixo, e *todas* as arestas são de cima para baixo.
 É uma forma de desenhar diferente, mais fácil de achar os casamentos do problema das damas.
 Essa forma de desenhar é mais fácil para ver os casamentos do que o grafo planar.
 
