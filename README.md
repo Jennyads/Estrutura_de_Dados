@@ -4,12 +4,12 @@
 
 Índice de temas:
 
-* [Recursão](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Recurs%C3%A3o.md)
-* [Ponteiros](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Ponteiros.md)
-* [Fila](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Fila.md)
-* [Pilha](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Pilha.md)
-* [Busca Binária](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Busca_Bin%C3%A1ria.md)
-* [Algoritmos de Força Bruta, Backtracking ou Enumeração](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Algoritmo_For%C3%A7a_Bruta.md)
-* [Busca de Palavras](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Busca_Palavras.md)
-* [Teoria dos Grafos](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Teoria_dos_Grafos.md)
+* [Recursão](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Recurs%C3%A3o.md)
+* [Ponteiros](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Ponteiros.md)
+* [Fila](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Fila.md)
+* [Pilha](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Pilha.md)
+* [Busca Binária](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Busca_Bin%C3%A1ria.md)
+* [Algoritmos de Força Bruta, Backtracking ou Enumeração](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Algoritmo_For%C3%A7a_Bruta.md)
+* [Busca de Palavras](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Busca_Palavras.md)
+* [Teoria dos Grafos](https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Arquivos/Teoria_dos_Grafos.md)
 
