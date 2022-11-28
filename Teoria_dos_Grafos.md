@@ -144,3 +144,110 @@ G[3] = ['A', 'B', 'C']
 G[4] = ['B', 'E']
 G[5] = ['B', 'E', 'F']
 ```
+
+Grafo planar
+Pode ser redesenhado sem cruzar linhas, não muda o grafo, porém fica mais fácil de ver outras propriedaes do grafo.
+
+Fazer E1.81 e E1.82 p25 do ETG julo.pdf
+Dica: K4 é um grafo de 4 vértices todos ligados entre si.
+
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/k4.jpeg">
+</p>
+
+Dica 2: k2, 3 é um grafo bipartido, com 2 vértices em cima e 3 embaixo, todos os de cima ligados com todos os debaixo.
+
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/k2_k3.jpeg">
+</p>
+
+Note que para mostrar que é planar, basta fazer o desenho sem cruzar linhas
+Agora para mostrar que não é planar, precisa chegar no impossível, mostrando passo a passo.
+
+Caminho é aberto, uma sequencia de vértices ligados.
+Circuito é fechado, volta para a origem.
+
+Árvore é um grafo sem circuitos!
+
+Isomorfismo = pode-se desenhar o grafo de várias formas, como é o mesmo grafo, esses grafos é chamado de isomorfos.
+Mostra-se que dois grafos são iguais (isomorfos) colocando o nome dos vértices e mostrando que tem as mesmas arestas
+ 
+Mostre que os 3 desenhos do exercícios E2.7 são o mesmo grafo, colocando os nomes dos vértices:
+
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/isomorfos.jpeg">
+</p>
+
+
+Revisão:
+Grafos planares: grafos sem cruzar linhas
+Mostramos que K4 e K2,3 não são planares, para isso chegou-se num desenho onde não dá mais para tirar arestas sem cruzar com as que já tirou antes.
+
+Grafos isomorfos, tem os mesmos vértices e as mesmas arestas, só o desenho que é diferente.
+Como se mostra que dois desenhos são isomorfos? Colocando nome nos vértices, de tal forma que as arestas são as mesmas.
+Por exemplo, no exercício E2.7 colocou os nomes dos vértices nos 3 desenhos, de tal forma que são as mesmas ligações
+
+Costuma-se desenhar de outras formas, para ver propriedades do grafo mais facilmente.
+Em termos de programação os grafos são os mesmos!
+
+Conjuntos Estáveis, p73 do ETG julho 2012.pdf
+Conjunto de vértices, onde não tem nenhuma ligação entre um e outros
+Aplicação: têm-se substâncias químicas, algumas reagem com outras e explodem, quer-se colocar numa caixa o maior número de substâncias sem perigo de explosão.
+Como fazer um programa para resolver esse problema?
+1) Precisa modelar uma Estrutura de Dados com as ligações entre as substâncias.
+2) Escolha a substância com menos ligações, isto é de grau mínimo, com menos vizinhos.
+3) Tem que excluir a substância escolhida e todos os vizinhos dela.
+4) Volta ao passo 2 até acabar o grafo.
+
+Maximum Independent Set é o nome em inglês para maior conjunto estável.
+```
+G = {}
+V = [1, 2, 3, 4, 5, 6, 7]
+G[1] = [6, 7]
+G[2] = [3, 7]
+G[3] = [4, 7, 2]
+G[4] = [3, 7]
+G[5] = [7]
+G[6] = [1, 3]
+G[7] = [1, 2, 3, 4, 5]
+removed = [False]*8
+S = []
+aux = []
+for i in V: aux.append((i, G[i]))
+aux.sort(key=lambda a: len(a[1]))
+removed[0] = True
+while aux:
+    v = aux[0]
+    if not removed[v[0]]: S.append(v[0])
+    for i in v[1]: removed[i] = True
+    aux.pop(0)
+print(S)
+```
+
+Greedy = guloso = escolhe a melhor opção.
+
+Minimum Degree = grau mínimo.
+
+No filme do Batman com Coringa, dizemos que o Coringa é o Alter Ego do Batman.No mundo dos grafos acontece a mesma coisa, é possível resolver o problema de ver todos os que estão ligados entre si, pelo inverso dele, que é o conjunto estável máximo.
+
+Para resolver o problema dos vértices ligados, monte um grafo complementar e use o programa que calcula o maior conjunto estável.
+
+Cobertura de vértices: suponha um museu, onde se quer colocar guardas que consigam ver todos os corredores.
+
+Emparelhamento Máximo é o problema das damas, isto é, conseguir casamentos que maximizem o número de damas casadas.
+
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/circuitomaximo.jpeg">
+</p>
+
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/circuitomaximo2.jpeg">
+</p>
+
+
+Circuito Hamiltoniano é o problema dos cavaleiros, isto é, conseguir passar por todos os vértices, sem repetir, e voltar para a origem, página 135 do PDF
+Faça o circuito hamiltoniano nos dois grafos do E17.3:
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/reiarthur.jpeg">
+</p>
+
