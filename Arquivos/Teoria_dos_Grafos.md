@@ -200,6 +200,10 @@ Como fazer um programa para resolver esse problema?
 3) Tem que excluir a substância escolhida e todos os vizinhos dela.
 4) Volta ao passo 2 até acabar o grafo.
 
+<p align="center">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/conjuntoestavel.png">
+</p>
+
 Maximum Independent Set é o nome em inglês para maior conjunto estável.
 ```
 G = {}
