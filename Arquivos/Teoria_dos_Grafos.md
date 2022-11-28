@@ -159,7 +159,7 @@ Dica: K4 é um grafo de 4 vértices todos ligados entre si.
 Dica 2: k2, 3 é um grafo bipartido, com 2 vértices em cima e 3 embaixo, todos os de cima ligados com todos os debaixo.
 
 <p align="center">
-  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/k2_k3.jpeg">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/k2_k3.jpeg">
 </p>
 
 Note que para mostrar que é planar, basta fazer o desenho sem cruzar linhas
