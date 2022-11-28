@@ -103,14 +103,14 @@ Pode separar em vértices de cima e vértices de baixo, e *todas* as arestas sã
 Essa forma de desenhar é mais fácil para ver os casamentos do que o grafo planar.
 
 <p align="center">
-  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/bipartido.jpeg">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/bipartido.jpeg">
 </p>
 
 
 Grafo bipartido completo tem todos os vértices de cima ligados com os vértices de baixo, são nomeados K n, m onde n são os vértices de cima e m os vértoces de baixo K2, 3 tem dois vértices em cima e 3 vértices embaixo, todos de cima ligados com todos de baixo. K3, 3 tem 3 vértices em cima e 3 embaixo, todos de cima ligados com todos de baixo.
 
 <p align="center">
-  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/k2_k3.jpeg">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/k2_k3.jpeg">
 </p>
 
 Fazer o desenho do E1.25 e descubra o casamento onde todas as máquinas estarão funcionando.
@@ -119,7 +119,7 @@ Qual a primeira máquina que deve ser escolhida em primeiro lugar?
 Escolhe a máquina que tem menos operários capazes de operá-la: máquina 1.
 
 <p align="center">
-  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/maquinas.jpeg">
+  <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/maquinas.jpeg">
 </p>
 
 Agora se B opera máquina 1, deve tirar B de todas as máquinas que ele opera. 
