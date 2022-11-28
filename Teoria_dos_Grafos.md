@@ -145,7 +145,8 @@ G[4] = ['B', 'E']
 G[5] = ['B', 'E', 'F']
 ```
 
-Grafo planar
+Grafo planar:
+
 Pode ser redesenhado sem cruzar linhas, não muda o grafo, porém fica mais fácil de ver outras propriedaes do grafo.
 
 Fazer E1.81 e E1.82 p25 do ETG julo.pdf
