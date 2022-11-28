@@ -252,3 +252,134 @@ Faça o circuito hamiltoniano nos dois grafos do E17.3:
   <img width="500" src="https://github.com/Jennyads/Estrutura_de_Dados/blob/main/Imagens/reiarthur.jpeg">
 </p>
 
+
+Revisão para a P2
+
+Árvores Binárias: raiz encima, galhos embaixo. Somente dois filhos, no máximo, para cada nó.
+
+Árvores Binárias de BUSCA:
+Além de serem árvores, todo conteúdo dos filhos da direita são maiores no conteúdo, e todos os filhos da esquerda são menores no conteúdo.
+Para buscar um elemento começa pela raiz, se o número buscado for maior vamos para o lado direito, caso contrário esquerdo, a cada passo jogo fora metade da árvore, como na Busca Binária.
+Demora log(n, 2) passos.
+Se derrubar todos os conteúdos, tem-se um vetor ordenado.
+Em relação à busca tem-se exatamente a Busca Binária num vetor ordenado.
+Em relação aos Dados, também é um vetor ordenado.
+
+Se é tudo igual, porque criei uma nova Estrutura de Dados, com ponteiros?
+Porque apesar da busca ser igual, a inserção e remoção num vetor, mesmo ordenado, é muito ruim, tenho que empurrar todo mundo.
+A inserção e remoção com ponteiros é muito mais eficiente, por isso criou-se essa nova estrutura de Dados, que é igual na busca, mas muito mais eficiente na inserção e remoção. Essa Estrutura de Dados se chama BST no inglês, Binary Search Tree, e é usada para se implementar o Índice dos Bancos de Dados.
+
+Teoria dos Grafos
+Grafos são compostos de vértices e arestas
+Apesar do desenho ser indiferente, pode-se ver "propriedades" especiais mais facilmente num determinado desenho, seja Planar ou Bipartido.
+
+Pode-se implementar um grafo como Matriz de zeros e uns ou como um dicionário.
+Matriz consome muito espaço, apesar de eficiente para testar se um vértice é vizinho do outro, em geral prefere-se usar um dicionário, onde se associa a um vértice uma lista de seus vizinhos.
+
+Grafos particularmente importantes:
+Cavalo 3-por-3
+```
+Desenho um tabuleiro 3x3
+Começa um vértice no canto superior esquerdo
+E faz as ligações conforme os movimentos do cavalo
+É possível redesenhar esse grafo Planar, isto é sem cruzar as linhas
+Ele resolve o problema das damas e resolve o problema dos cavaleiros
+```
+Cubo Q3
+Os vértices são sequencias de 3 bits, e dois vértices são ligados se apenas um bit é diferente.
+É possível desenhar planar, se ver de cima, e diminuir o quadrado de cima.
+Ele resolve o problema das damas e dos cavaleiros.
+Na prova você precisa mostrar os casamentos e o circuito hamiltoniano, que é a sequencia em torno da mesa.
+
+No problema das máquinas, tem-se uma reformulação do problema das damas, onde as damas são as máquinas e os preferidos, os operários que sabem pilotá-las
+Como se resolve esse problema num código?
+Em primeiro lugar é necessário montar um dicionário, onde a chave é a máquina! Note que no enunciado é colocado o operário com as máquinas associadas.
+No código escolhe em primeiro lugar, a máquina que tem menos operários que sabem pilotá-la.
+Depois remove a máquina e o operário de todas as listas das máquinas que sobraram.
+Máquinas e operários.py
+```
+G = {
+     1:['B'],
+     2:['A', 'B', 'E', 'F'],
+     3:['A', 'B', 'C'],
+     4:['B', 'E'],
+     5:['B', 'E', 'F']
+}
+while G: 
+  m = sorted(G, key=lambda x: len(G[x]))[0]
+  op = G[m][0]
+  print (m, op)
+  del G[m]
+  for máq in G:
+    if op in G[máq]: G[máq].remove(op)
+```
+
+Planaridade
+Um grafo é planar quando possibilita desenhá-lo sem cruzar as linhas.
+Mostrar que é não planar é mais difícil, precisa ir tirando as arestas que cruzam e chegar num beco sem saída, onde não é possível tirar mais arestas.
+
+Mostrar que K5 não é planar
+Mostrar que K3,3 não é planar
+Não esquecer do hexágono para o K3,3
+
+Isomorfismo
+
+No problema mostra que dois grafos são o mesmo grafo, colocando o nome dos vértices e mostrando que as arestas são iguais.
+
+Problema do Conjunto Independente:
+```
+Conjunto independente são vértices que não são ligados dois a dois
+O máximo conjunto independente é importante para o problema de encaixotar substâncias químicas
+Monte um grafo onde ligações representam reação química entre duas substâncias
+O maior conjunto numa caixa é o conjunto independente maximal
+Escolho o vértice com menos ligações
+Remove ele
+E remove as ligações de todos os vértices que sobraram
+```
+
+Circuito Hamiltoniano
+É um circuito que começa num vértice, passa por todos os outros, sem repetir, e volta para a origem
+Esse circuito pode ser colocado em torno de uma mesa redonda, isto é, resolve o problem a dos cavaleiros
+
+Estudem os dois códigos Python:
+Máquinas e operários.py
+```
+G = {
+     1:['B'],
+     2:['A', 'B', 'E', 'F'],
+     3:['A', 'B', 'C'],
+     4:['B', 'E'],
+     5:['B', 'E', 'F']
+}
+while G: 
+  m = sorted(G, key=lambda x: len(G[x]))[0]
+  op = G[m][0]
+  print (m, op)
+  del G[m]
+  for máq in G:
+    if op in G[máq]: G[máq].remove(op)
+```
+Easy Maximum Independent Set by Minimum Degree Greedy Heuristic.py
+```
+G = {}
+V = [1, 2, 3, 4, 5, 6, 7]
+G[1] = [6, 7]
+G[2] = [3, 7]
+G[3] = [4, 7, 2]
+G[4] = [3, 7]
+G[5] = [7]
+G[6] = [1, 3]
+G[7] = [1, 2, 3, 4, 5]
+removed = [False]*8
+S = []
+aux = []
+for i in V: aux.append((i, G[i]))
+aux.sort(key=lambda a: len(a[1]))
+removed[0] = True
+while aux:
+    v = aux[0]
+    if not removed[v[0]]: S.append(v[0])
+    for i in v[1]: removed[i] = True
+    aux.pop(0)
+print(S)
+```
