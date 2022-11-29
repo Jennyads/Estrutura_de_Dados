@@ -31,7 +31,7 @@ Porque é tão importante guardar esse grafo?
 Porque ele é um teste para programas que verificam o problema das damas e dos cavaleiros.
 
 
-Grafos são compostos por vértices e arestas
+Grafos são compostos por vértices e arestas.
 Existem duas formas de representar:
 1) Matriz de zeros e uns, ocupa muito espaço, porém é rápido para verificar se é vizinho
 2) Dicionário, onde para cada vértice se associa uma lista de vizinhos
@@ -181,8 +181,8 @@ Mostre que os 3 desenhos do exercícios E2.7 são o mesmo grafo, colocando os no
 
 
 Revisão:
-Grafos planares: grafos sem cruzar linhas
-Mostramos que K4 e K2,3 não são planares, para isso chegou-se num desenho onde não dá mais para tirar arestas sem cruzar com as que já tirou antes.
+Grafos planares: grafos sem cruzar linhas!
+Mostrou-se que K5 e K3,3 não são planares, para isso chegou-se num desenho onde não dá mais para tirar arestas sem cruzar com as que já foram tiradas antes.
 
 Grafos isomorfos, tem os mesmos vértices e as mesmas arestas, só o desenho que é diferente.
 Como se mostra que dois desenhos são isomorfos? Colocando nome nos vértices, de tal forma que as arestas são as mesmas.
